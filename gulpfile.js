@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
+    path = require('path'),
     concat = require('gulp-concat'),
     replace = require('gulp-replace'),
     nodemon = require('gulp-nodemon'),
@@ -45,14 +46,14 @@ gulp.task('server-dev', function() {
         env: {
             TUACM_DEV: 'true',
             LOGPATH: path.join(__dirname, 'logs'),
-            MONGO_URL: 'mongodb://tuacm:tuacm@kahana.mongohq.com:10045/tuacm',
+            MONGO_URL: 'mongodb://test:test@linus.mongohq.com:10018/owlhacks-dev',
             SESSION_SECRET: 'thisIsSoSecretBro',
             PORT: '3000'
         }
     });
 });
 
-gulp.task('watch', ['server'], function() {
+gulp.task('watch', ['server-dev'], function() {
     livereload.listen();
     gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
     gulp.watch('public/less/*.less', ['less']).on('change', livereload.changed);
