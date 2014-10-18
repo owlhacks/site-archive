@@ -3,6 +3,8 @@ var express = require('express'),
 
 var app = express();
 
+app.set('port', process.env.PORT || 3000);
+
 app.get('/', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'pages', 'index.html'));
 });
@@ -15,6 +17,6 @@ app.get('/*', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'dist', 'pages', '404.html'));
 });
 
-app.listen(3000, function() {
-    console.log('Server is listening');
+app.listen(app.get('port'), function() {
+    console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
