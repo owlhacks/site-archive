@@ -6,6 +6,12 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
 
+var delay = function(fn, time) {
+    return function() {
+        setTimeout(fn, time);
+    };
+};
+
 gulp.task('less', function() {
     // Builds the CSS
     gulp.src(['public/less/styles.less'])
@@ -56,7 +62,7 @@ gulp.task('server-dev', function() {
 gulp.task('watch', ['server-dev'], function() {
     livereload.listen();
     gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
-    gulp.watch('public/less/*.less', ['less']).on('change', livereload.changed);
+    gulp.watch('public/less/*.less', ['less']).on('change', delay(livereload.changed, 500));
     gulp.watch('public/pages/*.html', ['html-dev']).on('change', livereload.changed);
     gulp.watch('public/partials/*.html', ['html-dev']).on('change', livereload.changed);
 });

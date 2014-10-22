@@ -4,9 +4,10 @@ var express = require('express'),
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-    res.status(200).sendFile(path.join(__dirname, 'public', 'pages', 'index.html'));
+    res.status(200).sendFile(path.join(__dirname, 'public', 'dist', 'pages', 'index.html'));
 });
 
 app.get('/letmeknow', function(req, res) {
