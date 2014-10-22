@@ -12,12 +12,16 @@ body {
         &#splash {
             height: 100%;
             background-color: @dark-blue;
+            background-image: url(../img/bg.jpg);
+            background-size: contain;
+            background-position: center;
             display: table;
             padding: 0px;
 
             info {
                 display: table-cell;
                 vertical-align: middle;
+                text-align: center;
 
                 owl {
                     display: block;
@@ -33,14 +37,44 @@ body {
                 h1 {
                     color: white;
                     font-family: 'Roboto Slab', serif;
-                    // text-transform: uppercase;
                     font-size: 64px;
-                    // text-shadow: 3px 3px rgba(0, 0, 0, 0.8);
                     text-align: center;
-                    // font-weight: 700;
                     letter-spacing: 2px;
                     margin-top: 10px;
+                    font-weight: 400;
                 }
+
+                h2 {
+                    color: white;
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 28px;
+                    text-align: center;
+                    letter-spacing: 2px;
+                    font-weight: 300;
+                    width: auto;
+                    margin-bottom: 5px;
+                }
+
+                h3 {
+                    color: lighten(@blue, 15%);
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 32px;
+                    text-align: center;
+                    letter-spacing: 2px;
+                    font-weight: 300;
+                    width: auto;
+                    margin-top: 5px;
+                }
+
+                button.btn-register {
+                    color: white;
+                    background-color: @red;
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 28px;
+                    font-weight: 300;
+                    w
+                }
+
             }
         }
 
