@@ -56,7 +56,7 @@ body {
                 }
 
                 h3 {
-                    color: lighten(@blue, 15%);
+                    color: lighten(@blue, 20%);
                     font-family: 'Roboto Slab', serif;
                     font-size: 32px;
                     text-align: center;
@@ -70,9 +70,17 @@ body {
                     color: white;
                     background-color: @red;
                     font-family: 'Roboto Slab', serif;
-                    font-size: 28px;
-                    font-weight: 300;
-                    w
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-top: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    padding: 10px 80px;
+                    transition: background-color 0.5s;
+
+                    &:hover {
+                        background-color: desaturate(lighten(@red, 10%), 10%);
+                    }
                 }
 
             }
