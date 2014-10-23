@@ -109,39 +109,78 @@ body {
             heading {
                 color: @dark-blue;
             }
+            #topic-container {
+                text-align: center;
 
-            .topic {
-                margin-bottom: 20px;
+                .topic {
+                    margin-bottom: 50px;
+                    display: block;
 
-                #topic-build,
-                #topic-learn,
-                #topic-collaborate {
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    width: 200px;
-                    height: 200px;
-                    margin: 0 auto;
+                    #topic-build,
+                    #topic-learn,
+                    #topic-collaborate {
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        width: 200px;
+                        height: 200px;
+                        margin: 0 auto;
+                    }
+
+                    #topic-build {
+                        background-image: url(../img/about-build.png);
+                    }
+
+                    #topic-learn {
+                        background-image: url(../img/about-learn.png);
+                    }
+
+                    #topic-collaborate {
+                        background-image: url(../img/about-collaborate.png);
+                    }
+
+                    h2 {
+                        color: @dark-blue;
+                        font-family: 'Roboto Slab', serif;
+                        font-size: 36px;
+                        text-align: center;
+                        margin-top: 10px;
+                        font-weight: 400;
+                    }
                 }
 
-                #topic-build {
-                    background-image: url(../img/about-build.png);
+                @media (min-width:615px) {
+                    .topic {
+                        display: inline-block;
+                        margin-left: 100px;
+                        margin-bottom: 20px;
+
+                        &:first-child {
+                            margin-left: 0px;
+                        }
+
+                        &:last-child {
+                            display: block;
+                            margin: 0 auto;
+                            margin-top: 20px;
+                        }
+                    }
                 }
 
-                #topic-learn {
-                    background-image: url(../img/about-learn.png);
-                }
+                @media (min-width:915px) {
+                    .topic {
+                        display: inline-block;
+                        margin-left: 100px;
+                        margin-bottom: 20px;
 
-                #topic-collaborate {
-                    background-image: url(../img/about-collaborate.png);
-                }
+                        &:first-child {
+                            margin-left: 0px;
+                        }
 
-                h2 {
-                    color: @dark-blue;
-                    font-family: 'Roboto Slab', serif;
-                    font-size: 36px;
-                    text-align: center;
-                    margin-top: 10px;
-                    font-weight: 400;
+                        &:last-child {
+                            display: inline-block;
+                            margin-left: 100px;
+                        }
+                    }
                 }
             }
         }
