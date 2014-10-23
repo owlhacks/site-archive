@@ -175,7 +175,7 @@ body {
                 @media (min-width:915px) {
                     .topic {
                         display: inline-block;
-                        margin-left: 100px;
+                        margin-left: 50px;
                         margin-bottom: 20px;
 
                         &:first-child {
@@ -184,20 +184,25 @@ body {
 
                         &:last-child {
                             display: inline-block;
-                            margin-left: 100px;
+                            margin-left: 50px;
                         }
                     }
                 }
             }
         }
 
+        &#schedule {
+            background-color: @dark-blue;
+            color: white;
+        }
+
         &#faq {
-            background-color: @orange;
+            background-color: @red;
             color: white;
         }
 
         &#register {
-            background-color: @red;
+            background-color: @orange;
             color: white;
         }
     }
