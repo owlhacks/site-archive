@@ -1,13 +1,23 @@
 @red: #9e1b34;
 @blue: #6695af;
 @dark-blue: #2a3a53;
+@pale-blue: #e0e8ea;
 
 body {
     section {
         display: block;
         width: 100%;
         position: relative;
-        padding: 50px;
+        padding: 50px 0px;
+
+        heading {
+            display: block;
+            margin-bottom: 30px;
+            font-family: 'Roboto Slab', serif;
+            font-size: 48px;
+            text-align: center;
+            font-weight: 400;
+        }
 
         &#splash {
             height: 100%;
@@ -90,7 +100,49 @@ body {
                         box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
                     }
                 }
+            }
+        }
 
+        &#about {
+            background-color: lighten(@blue, 30%);
+
+            heading {
+                color: @dark-blue;
+            }
+
+            .topic {
+                margin-bottom: 20px;
+
+                #topic-build,
+                #topic-learn,
+                #topic-collaborate {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 200px;
+                    height: 200px;
+                    margin: 0 auto;
+                }
+
+                #topic-build {
+                    background-image: url(../img/about-build.png);
+                }
+
+                #topic-learn {
+                    background-image: url(../img/about-learn.png);
+                }
+
+                #topic-collaborate {
+                    background-image: url(../img/about-collaborate.png);
+                }
+
+                h2 {
+                    color: @dark-blue;
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 36px;
+                    text-align: center;
+                    margin-top: 10px;
+                    font-weight: 400;
+                }
             }
         }
 
