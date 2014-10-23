@@ -7,9 +7,7 @@ git clone git@github.com:/<YOUR GITHUB USER NAME>/site
 ```
 
 ## Prerequisites
-* Node.js - Download and install [Node.js](http://www.nodejs.org/download/)
-
-### Tools Prerequisites
+* [Node.js](http://www.nodejs.org/download/) - Download and install from [http://www.nodejs.org/download/](http://www.nodejs.org/download/)
 * [Bower](http://bower.io/) - Web package manager:
 
 ```
