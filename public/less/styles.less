@@ -3,6 +3,8 @@
 @orange: #c76a30;
 @gold: #ccb366;
 @green: #898963;
+@black: #222222;
+@gray-black: #494949;
 @dark-blue: #2a3a53;
 @pale-blue: #e0e8ea;
 @blue-black: #232830;
@@ -193,19 +195,56 @@ body {
             }
         }
 
-        &#schedule {
-            background-color: @dark-blue;
-            color: white;
-        }
-
         &#faq {
             background-color: @red;
-            color: white;
+            background-image: url(../img/paleylibrary.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            heading{
+                color: white;
+            
+            }
+            
+            .question {
+                list-style: none;
+                color: white;
+                font-family: 'Roboto Slab', serif;
+                font-size: 30px;
+                text-align: center;
+                letter-spacing: 2px;
+                font-weight: 300;
+                width: auto;
+                margin-bottom: 5px;
+                cursor: pointer;
+                padding-top: 2.5%;
+
+                ul{
+                    display: none;
+                }
+
+                &:hover {
+                    color: darken(white, 20%);
+                }
+
+                .answer {
+                    color: white !important;
+                    list-style: none;
+                    font-size: 24px;
+                    cursor: default;
+                    padding-top: 20px;
+                }   
+            }
         }
 
         &#register {
+		
             background-color: @orange;
-            color: white;
+            background-image: url(../img/conwell.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 			form{
 				display: table-cell;
                 vertical-align: middle;
@@ -237,7 +276,7 @@ body {
 				
 				input.form-input{
 					color: white;
-                    background-color: @red;
+                    background-color: white;
                     font-family: 'Roboto Slab', serif;
                     font-size: 22px;
                     font-weight: 400;
