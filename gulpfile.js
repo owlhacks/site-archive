@@ -59,6 +59,20 @@ gulp.task('server-dev', function() {
     });
 });
 
+gulp.task('server', function() {
+    // Runs the server forever
+    nodemon({
+        script: 'index.js',
+        ext: 'js',
+        ignore: ['public/*'],
+        env: {
+            TUACM_DEV: 'false',
+            LOGPATH: path.join(__dirname, 'logs'),
+            PORT: '80'
+        }
+    });
+});
+
 gulp.task('watch', ['server-dev'], function() {
     livereload.listen();
     gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
