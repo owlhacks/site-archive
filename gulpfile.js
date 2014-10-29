@@ -17,6 +17,10 @@ gulp.task('less', function() {
     gulp.src(['public/less/styles.less'])
         .pipe(less())
         .pipe(gulp.dest('public/dist'));
+
+    gulp.src(['public/less/404.less'])
+        .pipe(less())
+        .pipe(gulp.dest('public/dist'));
 });
 
 gulp.task('js', function() {
@@ -53,7 +57,7 @@ gulp.task('server-dev', function() {
             TUACM_DEV: 'true',
             LOGPATH: path.join(__dirname, 'logs'),
             MONGO_URL: 'mongodb://test:test@linus.mongohq.com:10018/owlhacks-dev',
-            SESSION_SECRET: 'thisIsSoSecretBro',
+            SESSION_SECRET: 'thisisasecret',
             PORT: '3000'
         }
     });
