@@ -1,6 +1,8 @@
 @red: #9e1b34;
 @blue: #6695af;
 @orange: #c76a30;
+@gold: #ccb366;
+@green: #898963;
 @black: #222222;
 @gray-black: #494949;
 @dark-blue: #2a3a53;
@@ -243,8 +245,56 @@ body {
         }
 
         &#register {
+		
             background-color: @orange;
-            color: white;
+            background-image: url(../img/conwell.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+			form{
+				display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+				
+				button.btn-register {
+                    color: white;
+                    background-color: @red;
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-top: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    padding: 10px 80px;
+                    outline: 0 none;
+                    border-width: 0px;
+                    transition: background-color 0.5s, color 0.5s;
+
+                    &:hover {
+                        color: white;
+                        background-color: #6695af;
+                    }
+
+                    &:active {
+                        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
+                    }
+                }
+				
+				input.form-input{
+					color: white;
+                    background-color: white;
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-top: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    padding: 10px 80px;
+                    outline: 0 none;
+                    border-width: 0px;
+				}
+			
+			}
         }
     }
 
