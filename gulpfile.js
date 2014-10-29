@@ -17,6 +17,10 @@ gulp.task('less', function() {
     gulp.src(['public/less/styles.less'])
         .pipe(less())
         .pipe(gulp.dest('public/dist'));
+
+    gulp.src(['public/less/404.less'])
+        .pipe(less())
+        .pipe(gulp.dest('public/dist'));
 });
 
 gulp.task('js', function() {
@@ -55,6 +59,20 @@ gulp.task('server-dev', function() {
             MONGO_URL: 'mongodb://test:test@linus.mongohq.com:10018/owlhacks-dev',
             SESSION_SECRET: 'thisisasecret',
             PORT: '3000'
+        }
+    });
+});
+
+gulp.task('server', function() {
+    // Runs the server forever
+    nodemon({
+        script: 'index.js',
+        ext: 'js',
+        ignore: ['public/*'],
+        env: {
+            TUACM_DEV: 'false',
+            LOGPATH: path.join(__dirname, 'logs'),
+            PORT: '80'
         }
     });
 });
