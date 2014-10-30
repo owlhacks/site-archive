@@ -37,6 +37,8 @@ body {
                 display: table-cell;
                 vertical-align: middle;
                 text-align: center;
+                padding-top: 50px;
+                padding-bottom: 50px;
 
                 owl {
                     display: block;
@@ -113,25 +115,63 @@ body {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            text-align: center;
 
             heading {
                 color: @dark-blue;
             }
+
+            .cutoff {
+                display: flex;
+
+                .dash {
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    display: block;
+                    margin-top: 20px;
+                    height: 7px;
+                    border-top: 2px solid @dark-blue;
+                    border-bottom: 2px solid @dark-blue;
+                }
+
+                h2 {
+                    flex-basis: auto;
+                    flex-shrink: 0;
+                    flex-grow: 0;
+
+                    margin: 0px 30px;
+                    color: @dark-blue;
+                    font-family: 'Roboto Slab', sans-serif;
+                    font-size: 36px;
+                    text-align: center;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+
             #topic-container {
-                text-align: center;
+                display: table;
+                margin: 0 auto;
+                margin-bottom: 30px;
 
                 .topic {
                     margin-bottom: 50px;
-                    display: block;
+                    display: table-cell;
+                    vertical-align: middle;
 
                     #topic-build,
                     #topic-learn,
                     #topic-collaborate {
                         background-size: contain;
                         background-repeat: no-repeat;
-                        width: 200px;
-                        height: 200px;
+                        width: 150px;
+                        height: 150px;
                         margin: 0 auto;
+
+                        &.large {
+                            width: 200px;
+                            height: 200px;
+                        }
                     }
 
                     #topic-build {
@@ -146,49 +186,37 @@ body {
                         background-image: url(../img/about-collaborate.png);
                     }
 
-                    h2 {
-                        color: @dark-blue;
-                        font-family: 'Roboto Slab', serif;
-                        font-size: 32px;
-                        text-align: center;
-                        margin-top: 30px;
-                        font-weight: 400;
+                }
+            }
+
+            .blurb {
+                width: 100%;
+                margin-top: 50px;
+                margin-bottom: 25px;
+                font-family: 'Roboto Slab', serif;
+                font-size: 28px;
+                text-align: center;
+                letter-spacing: 2px;
+                font-weight: 300;
+                padding: 0px 80px;
+                color: @dark-blue;
+
+                a, a:visited {
+                    color: @dark-blue;
+                    // text-decoration: underline;
+                    border-bottom: 2px solid @dark-blue;
+
+                    &:hover {
+                        text-decoration: none;
                     }
                 }
 
-                @media (min-width:615px) {
-                    .topic {
-                        display: inline-block;
-                        margin-left: 50px;
-                        margin-bottom: 20px;
-
-                        &:first-child {
-                            margin-left: 0px;
-                        }
-
-                        &:last-child {
-                            display: block;
-                            margin: 0 auto;
-                            margin-top: 20px;
-                        }
-                    }
+                bold {
+                    font-weight: 400;
                 }
 
-                @media (min-width:915px) {
-                    .topic {
-                        display: inline-block;
-                        margin-left: 100px;
-                        margin-bottom: 20px;
-
-                        &:first-child {
-                            margin-left: 0px;
-                        }
-
-                        &:last-child {
-                            display: inline-block;
-                            margin-left: 100px;
-                        }
-                    }
+                italics {
+                    font-style: italic;
                 }
             }
         }
@@ -202,7 +230,7 @@ body {
 
             heading{
                 color: white;
-            
+
             }
 
             .row{
@@ -238,7 +266,7 @@ body {
                     font-size: 24px;
                     cursor: default;
                     padding-top: 20px;
-                }   
+                }
             }
         }
 
