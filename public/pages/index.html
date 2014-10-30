@@ -121,10 +121,11 @@
             <heading>Get Signed Up</heading>
             <div class="container">
                 <form action="/subscribe" method="POST">
-                    Email: <input type="email" name="email" value=""><br>
-                    First name: <input type="text" name="firstname"><br>
-                    Last name: <input type="text" name="lastname">
-                    <input type="submit" class="button" name="submit" value="Subscribe to list">
+					<input id="name" class="form-input" type="text" placeholder="First Name" required="">
+					<input id="name" class="form-input" type="text" placeholder="Last Name" required="">
+					<input id="school" class="form-input" type="text" placeholder="School" required="">
+					<input id="email" class="form-input" type="email" placeholder="Email" required="">
+                    <button type="button" class="btn btn-register">register</button>
                 </form>
             </div>
         </section>
