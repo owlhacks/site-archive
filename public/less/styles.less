@@ -14,7 +14,7 @@ body {
     background-color: @dark-blue;
 
     progress-bar {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         margin-top: -1px;
@@ -264,6 +264,7 @@ body {
                 font-weight: 300;
                 padding: 0px 80px;
                 color: @dark-blue;
+                transition: color 0.5s, border-color 0.5s;
 
                 a, a:visited {
                     color: @dark-blue;
@@ -272,6 +273,8 @@ body {
 
                     &:hover {
                         text-decoration: none;
+                        color: lighten(@dark-blue, 20%);
+                        border-color: lighten(@dark-blue, 20%);
                     }
                 }
 
@@ -297,7 +300,7 @@ body {
             }
 
             .qa {
-                margin-bottom: 30px;
+                margin-bottom: 50px;
 
                 question {
                     display: block;
@@ -307,7 +310,7 @@ body {
                     font-weight: 700;
                     letter-spacing: 1px;
                     color: white;
-                    margin-bottom: 5px;
+                    margin-bottom: 15px;
                 }
 
                 answer {
@@ -357,13 +360,13 @@ body {
                         }
                     }
 
-                    button {
+                    a.btn {
                         display: block;
                         width: 95%;
                         color: @red;
                         background: white;
                         font-family: 'Roboto Slab', serif;
-                        font-size: 22px;
+                        font-size: 20px;
                         font-weight: 400;
                         margin-top: 20px;
                         text-transform: uppercase;
