@@ -33,10 +33,17 @@
         var i,
             img,
             loadedImages = 0,
+            $progress = $('progress-bar bar'),
             callback = function() {
-                if (++loadedImages >= images.length) {
-                    $body.removeClass('loading');
-                    $('section#splash info').addClass('animated zoomIn');
+                ++loadedImages;
+                console.log(loadedImages, '/', images.length);
+
+                if (loadedImages >= images.length) {
+                    $progress.css('width', '200px');
+                    setTimeout(function() {
+                        $body.removeClass('loading');
+                        $('section#splash info').addClass('animated zoomIn');
+                    }, 500);
                 }
             };
 

@@ -13,8 +13,34 @@
 body {
     background-color: @dark-blue;
 
-    &.loading section {
-        opacity: 0.0;
+    progress-bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -1px;
+        margin-left: -100px;
+        display: none;
+        width: 200px;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.2);
+
+        bar {
+            width: 0px;
+            transition: width 500ms;
+
+            display: block;
+            background: white;
+            height: 2px;
+        }
+    }
+
+    &.loading {
+        section {
+            opacity: 0.0;
+        }
+        progress-bar {
+            display: block;
+        }
     }
 
     section {
