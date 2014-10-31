@@ -42,7 +42,7 @@
                     $progress.css('width', '200px');
                     setTimeout(function() {
                         $body.removeClass('loading');
-                        $('section#splash info').addClass('animated zoomIn');
+                        // $('section#splash info').addClass('animated ');
                     }, 500);
                 }
             };
