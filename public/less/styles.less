@@ -11,11 +11,19 @@
 @blue-black: #232830;
 
 body {
+    background-color: @dark-blue;
+
+    &.loading section {
+        opacity: 0.0;
+    }
+
     section {
         display: block;
         width: 100%;
         position: relative;
         padding: 50px 0px;
+        transition: opacity 0.5s;
+        opacity: 1.0;
 
         heading {
             display: block;
@@ -136,11 +144,24 @@ body {
             }
 
             .cutoff {
+                display: -webkit-flex;
                 display: flex;
 
+                &.shimmed {
+                    display: block;
+
+                    .dash {
+                        display: none;
+                    }
+
+                    h2 {
+                        margin: 0 auto;
+                    }
+                }
+
                 .dash {
-                    flex-grow: 1;
-                    flex-shrink: 1;
+                    -webkit-flex: 1;
+                    flex: 1;
                     display: block;
                     margin-top: 20px;
                     height: 7px;
@@ -149,6 +170,9 @@ body {
                 }
 
                 h2 {
+                    -webkit-flex-basis: auto;
+                    -webkit-flex-shrink: 0;
+                    -webkit-flex-grow: 0;
                     flex-basis: auto;
                     flex-shrink: 0;
                     flex-grow: 0;
@@ -403,6 +427,8 @@ body {
         }
 
         &#sponsors {
+            background: white;
+
             a.btn-sponsor {
                 display: block;
                 color: white;
