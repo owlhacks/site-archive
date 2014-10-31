@@ -6,6 +6,7 @@
 @black: #222222;
 @gray-black: #494949;
 @dark-blue: #2a3a53;
+@electric-blue: lighten(saturate(@blue, 70%), 20%);
 @pale-blue: #e0e8ea;
 @blue-black: #232830;
 
@@ -95,7 +96,7 @@ body {
                     margin-top: 5px;
                 }
 
-                button.btn-register {
+                a.btn-register {
                     color: white;
                     background-color: @red;
                     font-family: 'Roboto Slab', serif;
@@ -104,14 +105,15 @@ body {
                     margin-top: 20px;
                     text-transform: uppercase;
                     letter-spacing: 3px;
-                    padding: 10px 80px;
+                    padding: 10px 0px;
+                    width: 300px;
                     outline: 0 none;
                     border-width: 0px;
                     transition: background-color 0.5s, color 0.5s;
 
                     &:hover {
                         color: white;
-                        background-color: #6695af;
+                        background-color: lighten(@red, 10%);
                     }
 
                     &:active {
@@ -267,13 +269,17 @@ body {
                     color: white;
 
                     a {
-                        color: white;
-                        border-bottom: 1px solid white;
+                        color: @electric-blue;
+                        border-bottom: 2px solid @electric-blue;
                         text-decoration: none;
                         margin: 0px 3px;
+                        font-weight: 400;
+                        transition: color 0.5s, border-color 0.5s;
 
                         &:hover {
                             text-decoration: none;
+                            border-color: lighten(@electric-blue, 10%);
+                            color: lighten(@electric-blue, 10%);
                         }
                     }
 
@@ -303,7 +309,7 @@ body {
 
                     button {
                         display: block;
-                        width: 90%;
+                        width: 95%;
                         color: @red;
                         background: white;
                         font-family: 'Roboto Slab', serif;
@@ -324,95 +330,104 @@ body {
                     }
                 }
             }
-
-            .row{
-                margin-left: 0;
-                margin-right: 0;
-            }
-
-            .question {
-                list-style: none;
-                color: white;
-                font-family: 'Bree Serif', serif;
-                font-size: 30px;
-                text-align: center;
-                letter-spacing: 2px;
-                font-weight: 300;
-                width: auto;
-                margin-bottom: 5px;
-                cursor: pointer;
-                padding-top: 2.5%;
-
-                ul{
-                    display: none;
-                }
-
-                &:hover {
-                    color: darken(white, 20%);
-                }
-
-                .answer {
-                    color: white !important;
-                    list-style: none;
-                    font-family: 'Roboto Slab', serif;
-                    font-size: 24px;
-                    cursor: default;
-                    padding-top: 20px;
-                }
-            }
         }
 
         &#register {
-
             background-color: @orange;
             background-image: url(../img/conwell.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-			form{
-				display: table-cell;
-                vertical-align: middle;
+
+            heading, subheading {
+                color: white;
+            }
+
+			form {
                 text-align: center;
 
 				button.btn-register {
+                    display: block;
+                    width: 500px;
+                    margin: 0 auto;
+
                     color: white;
-                    background-color: @red;
+                    background-color: transparent;
+                    border: 2px solid white;
                     font-family: 'Roboto Slab', serif;
                     font-size: 22px;
                     font-weight: 400;
                     margin-top: 20px;
                     text-transform: uppercase;
                     letter-spacing: 3px;
-                    padding: 10px 80px;
+                    padding: 10px;
                     outline: 0 none;
-                    border-width: 0px;
-                    transition: background-color 0.5s, color 0.5s;
+                    box-shadow: none;
+                    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 
                     &:hover {
-                        color: white;
-                        background-color: #6695af;
+                        border: none;
+                        padding: 12px;
+                        color: @orange;
+                        background-color: white;
+                        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
                     }
 
                     &:active {
+                        border: none;
+                        padding: 12px;
+                        color: @orange;
+                        background-color: white;
                         box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
                     }
                 }
 
-				input.form-input{
-					color: black;
+                input.form-input {
+                    display: block;
+                    width: 500px;
+                    margin: 0 auto;
+                    text-align: center;
+                    color: #444;
                     background-color: white;
                     font-family: 'Roboto Slab', serif;
                     font-size: 22px;
-                    font-weight: 400;
-                    margin-top: 20px;
-                    text-transform: uppercase;
-                    letter-spacing: 3px;
-                    padding: 10px 80px;
+                    font-weight: 300;
+                    margin-bottom: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
                     outline: 0 none;
-                    border-width: 0px;
-				}
-
+                    border: none;
+                    border-radius: 4px;
+                }
 			}
+        }
+
+        &#sponsors {
+            button.btn-sponsor {
+                display: block;
+                color: white;
+                width: 500px;
+                background-color: @dark-blue;
+                margin: 0 auto;
+                font-family: 'Roboto Slab', serif;
+                font-size: 22px;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                padding: 15px 0px;
+                outline: 0 none;
+                border-width: 0px;
+                transition: background-color 0.5s;
+
+                &:hover {
+                    color: white;
+                    background-color: lighten(@dark-blue, 20%);
+                }
+
+                &:active {
+                    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
+                }
+            }
         }
     }
 
