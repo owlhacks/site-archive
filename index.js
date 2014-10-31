@@ -12,10 +12,6 @@ app.get('/', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'dist', 'pages', 'index.html'));
 });
 
-app.get('/letmeknow', function(req, res) {
-
-});
-
 app.post('/subscribe', subscribe.send_to_mailchimp);
 
 app.get('/*', function(req, res) {

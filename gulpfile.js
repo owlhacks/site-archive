@@ -26,7 +26,7 @@ gulp.task('less', function() {
 gulp.task('js', function() {
     // Builds the JS
     gulp.src(['public/js/*.js'])
-        .pipe(concat('main.js'))
+        .pipe(concat('owlhacks.js'))
         .pipe(gulp.dest('public/dist'));
 });
 
@@ -54,10 +54,6 @@ gulp.task('server-dev', function() {
         ext: 'js',
         ignore: ['public/*'],
         env: {
-            TUACM_DEV: 'true',
-            LOGPATH: path.join(__dirname, 'logs'),
-            MONGO_URL: 'mongodb://test:test@linus.mongohq.com:10018/owlhacks-dev',
-            SESSION_SECRET: 'thisisasecret',
             PORT: '3000'
         }
     });
@@ -70,8 +66,6 @@ gulp.task('server', function() {
         ext: 'js',
         ignore: ['public/*'],
         env: {
-            TUACM_DEV: 'false',
-            LOGPATH: path.join(__dirname, 'logs'),
             PORT: '80'
         }
     });
