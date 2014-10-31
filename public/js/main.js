@@ -38,8 +38,8 @@
                 ++loadedImages;
                 console.log(loadedImages, '/', images.length);
 
+                $progress.css('width', (200 * loadedImages / images.length) + 'px');
                 if (loadedImages >= images.length) {
-                    $progress.css('width', '200px');
                     setTimeout(function() {
                         $body.removeClass('loading');
                     }, 500);
