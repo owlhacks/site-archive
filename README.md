@@ -37,6 +37,21 @@ Install dependencies:
     http://localhost:3000
     
 ## Deploying the Site
+The fastest way to get started with the MEAN stack is to clone the project from your forked repo and utilize it like this:
+
+Install dependencies:
+
+    $ npm install
+    $ bower install
+
+  Use [gulp](http://gulpjs.com/) to start the server:
+
+    $ gulp package
+    $ gulp
+    
+  Then open a browser and go to:
+
+    http://localhost:3000
 
 ## License
 (The MIT License)
