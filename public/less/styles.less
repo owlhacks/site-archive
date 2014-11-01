@@ -93,18 +93,19 @@ body {
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
-                    width: 300px;
-                    height: 300px;
+                    width: 250px;
+                    height: 250px;
                     margin: 0 auto;
                 }
 
                 h1 {
                     color: white;
                     font-family: 'Roboto Slab', serif;
-                    font-size: 88px;
+                    font-size: 78px;
                     text-align: center;
                     letter-spacing: 6px;
-                    margin-top: 10px;
+                    margin-top: 30px;
+                    margin-bottom: 0px;
                     font-weight: 700;
                     text-shadow: 0px 4px 0px #bbbbbb;
                     text-transform: uppercase;
@@ -113,22 +114,25 @@ body {
                 h2 {
                     color: white;
                     font-family: 'Roboto Slab', serif;
-                    font-size: 28px;
+                    font-size: 26px;
                     text-align: center;
-                    letter-spacing: 2px;
+                    letter-spacing: 1px;
                     font-weight: 300;
+                    margin-top: 8px;
                     width: auto;
+                    text-transform: uppercase;
                     margin-bottom: 5px;
                 }
 
                 h3 {
                     color: lighten(@blue, 20%);
                     font-family: 'Roboto Slab', serif;
-                    font-size: 28px;
+                    font-size: 38px;
                     text-align: center;
-                    letter-spacing: 2px;
-                    font-weight: 300;
+                    letter-spacing: 2.5px;
+                    font-weight: 400;
                     width: auto;
+                    text-transform: uppercase;
                     margin-top: 5px;
                 }
 
@@ -136,13 +140,13 @@ body {
                     color: white;
                     background-color: @red;
                     font-family: 'Roboto Slab', serif;
-                    font-size: 22px;
+                    font-size: 28px;
                     font-weight: 400;
                     margin-top: 20px;
                     text-transform: uppercase;
                     letter-spacing: 3px;
                     padding: 10px 0px;
-                    width: 300px;
+                    width: 500px;
                     outline: 0 none;
                     border-width: 0px;
                     transition: background-color 0.5s, color 0.5s;
@@ -325,26 +329,20 @@ body {
 
                     a {
                         color: @electric-blue;
-                        border-bottom: 2px solid @electric-blue;
                         text-decoration: none;
                         margin: 0px 3px;
                         font-weight: 400;
-                        transition: color 0.5s, border-color 0.5s;
+                        transition: color 0.5s;
 
                         &:hover {
                             text-decoration: none;
-                            border-color: lighten(@electric-blue, 10%);
                             color: lighten(@electric-blue, 10%);
                         }
                     }
 
                     bold {
-                        font-weight: 400;
-
-                        &:first-child {
-                            font-weight: 700;
-                            margin-right: 4px;
-                        }
+                        font-weight: 700;
+                        letter-spacing: 1px;
                     }
 
                     email {

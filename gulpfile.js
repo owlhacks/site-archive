@@ -4,7 +4,14 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     replace = require('gulp-replace'),
     nodemon = require('gulp-nodemon'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    express = require('express'),
+    bodyParser = require('body-parser'),
+    crypto = require('crypto'),
+    async = require('async'),
+    exec = require('child_process').exec,
+    git = require('gulp-git'),
+    http = require('http');
 
 var delay = function(fn, time) {
     return function() {
@@ -59,16 +66,52 @@ gulp.task('server-dev', function() {
     });
 });
 
-gulp.task('server', function() {
-    // Runs the server forever
-    nodemon({
-        script: 'index.js',
-        ext: 'js',
-        ignore: ['public/*'],
-        env: {
-            PORT: '80'
+gulp.task('githook', function() {
+    var app = express();
+
+    app.use(bodyParser.text({
+        'type': 'application/json'
+    }));
+
+    app.post('/githook', function(req, res) {
+        xHubSig = req.headers['x-hub-signature'].substring(5);
+        hmac = crypto.createHmac('sha1', 'thisissosecret');
+        hmac.write(req.body);
+        computedHubSig = hmac.digest('hex');
+        if (computedHubSig === xHubSig) {
+            async.series([
+
+                function(cb) {
+                    git.pull('origin', 'master', {}, cb);
+                },
+                function(cb) {
+                    exec('npm install', cb);
+                },
+                function(cb) {
+                    exec('bower install', cb);
+                },
+                function(cb) {
+                    gulp.start('package');
+                    cb();
+                },
+                function(cb) {
+                    exec('forever restartall', cb);
+                }
+            ], function(err) {
+                if (err) {
+                    res.status(500).send();
+                    console.log(err);
+                } else {
+                    res.status(200).send();
+                }
+            });
+        } else {
+            res.status(500).send();
+            console.log('Digests don\'t match');
         }
     });
+
+    http.createServer(app).listen(4000, '0.0.0.0')
 });
 
 gulp.task('watch', ['server-dev'], function() {
@@ -80,4 +123,5 @@ gulp.task('watch', ['server-dev'], function() {
 });
 
 gulp.task('package', ['html', 'js', 'less']);
+gulp.task('deploy', ['package', 'githook']);
 gulp.task('default', ['watch']);
