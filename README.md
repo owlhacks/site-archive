@@ -36,6 +36,7 @@ Install dependencies:
 
     http://localhost:3000
     
+## Deploying the Site
 
 ## License
 (The MIT License)
