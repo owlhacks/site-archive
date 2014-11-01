@@ -37,21 +37,28 @@ Install dependencies:
     http://localhost:3000
     
 ## Deploying the Site
-The fastest way to get started with the MEAN stack is to clone the project from your forked repo and utilize it like this:
+The deployment scheme for the Owlhacks website is powered by `forever` and `gulp`:
 
 Install dependencies:
 
+    $ npm install -g forever
     $ npm install
     $ bower install
 
-  Use [gulp](http://gulpjs.com/) to start the server:
+Use [gulp](http://gulpjs.com/) to build the assets of the server:
 
     $ gulp package
-    $ gulp
     
-  Then open a browser and go to:
+Use [forever](https://github.com/nodejitsu/forever) to run the server:
 
-    http://localhost:3000
+    $ sudo forever start index.js
+    
+Open `tmux`, then setup the githook:
+
+    $ tmux
+    $ gulp githook
+
+The site is now running on *port 80*, and the githook is running on *port 4000*.
 
 ## License
 (The MIT License)
