@@ -36,6 +36,29 @@ Install dependencies:
 
     http://localhost:3000
     
+## Deploying the Site
+The deployment scheme for the Owlhacks website is powered by `forever` and `gulp`:
+
+Install dependencies:
+
+    $ npm install -g forever
+    $ npm install
+    $ bower install
+
+Use [gulp](http://gulpjs.com/) to build the assets of the server:
+
+    $ gulp package
+    
+Use [forever](https://github.com/nodejitsu/forever) to run the server:
+
+    $ sudo forever start index.js
+    
+Open `tmux`, then setup the githook:
+
+    $ tmux
+    $ gulp githook
+
+The site is now running on *port 80*, and the githook is running on *port 4000*.
 
 ## License
 (The MIT License)
