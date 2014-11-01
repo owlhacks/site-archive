@@ -79,30 +79,37 @@ gulp.task('githook', function() {
         hmac.write(req.body);
         computedHubSig = hmac.digest('hex');
         if (computedHubSig === xHubSig) {
+            console.log('\n\nNew changes available:\n');
             async.series([
 
                 function(cb) {
+                    console.log('Pulling down changes from github...');
                     git.pull('origin', 'master', {}, cb);
                 },
                 function(cb) {
+                    console.log('Installing new node dependencies...');
                     exec('npm install', cb);
                 },
                 function(cb) {
+                    console.log('Installing new bower dependencies...');
                     exec('bower install', cb);
                 },
                 function(cb) {
+                    console.log('Packaging revised assets...');
                     gulp.start('package');
                     cb();
                 },
                 function(cb) {
+                    console.log('Restarting the web server...');
                     exec('forever restartall', cb);
                 }
             ], function(err) {
                 if (err) {
                     res.status(500).send();
-                    console.log(err);
+                    console.error(err);
                 } else {
                     res.status(200).send();
+                    console.log('\nNew changes integrated successfully.');
                 }
             });
         } else {
