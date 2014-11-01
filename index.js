@@ -5,7 +5,7 @@ var subscribe = require('./routes/subscribe');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
