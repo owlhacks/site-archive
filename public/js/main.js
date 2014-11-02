@@ -36,7 +36,6 @@
             $progress = $('progress-bar bar'),
             callback = function() {
                 ++loadedImages;
-                console.log(loadedImages, '/', images.length);
 
                 $progress.css('width', (200 * loadedImages / images.length) + 'px');
                 if (loadedImages >= images.length) {
