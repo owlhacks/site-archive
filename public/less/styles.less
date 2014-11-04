@@ -51,6 +51,10 @@ body {
         transition: opacity 0.5s;
         opacity: 1.0;
 
+        @media (max-width: 320px) {
+            padding: 25px 0px;
+        }
+
         heading {
             display: block;
             margin-bottom: 40px;
@@ -58,6 +62,13 @@ body {
             font-size: 48px;
             text-align: center;
             font-weight: 400;
+
+            @media (max-width: 320px) {
+                font-size: 36px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         subheading {
@@ -71,6 +82,13 @@ body {
 
             @media (max-width: 475px) {
                 font-size: 24px;
+            }
+
+            @media (max-width: 320px) {
+                font-size: 18px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
@@ -103,6 +121,12 @@ body {
 
                     @media (max-width: 575px) {
                         width: 250px;
+                        height: 250px;
+                    }
+
+                    @media (max-width: 320px) {
+                        width: 200px;
+                        height: 200px;
                     }
                 }
 
@@ -119,13 +143,19 @@ body {
                     text-transform: uppercase;
 
                     @media (max-width: 575px) {
-                        margin-top: 10px;
                         font-size: 64px;
                     }
 
                     @media (max-width: 475px) {
-                        margin-top: 0px;
+                        margin-top: 20px;
                         font-size: 50px;
+                    }
+
+                    @media (max-width: 320px) {
+                        margin-top: 20px;
+                        text-shadow: 0px 2px 0px #bbbbbb;
+                        font-size: 39px;
+                        letter-spacing: 4px;
                     }
                 }
 
@@ -150,6 +180,11 @@ body {
                         font-size: 17px;
                         letter-spacing: 1px;
                     }
+
+                    @media (max-width: 320px) {
+                        font-size: 14px;
+                        letter-spacing: 0px;
+                    }
                 }
 
                 h3 {
@@ -169,6 +204,11 @@ body {
 
                     @media (max-width: 475px) {
                         font-size: 24px;
+                    }
+
+                    @media (max-width: 320px) {
+                        font-size: 22px;
+                        letter-spacing: 0px;
                     }
                 }
 
@@ -197,6 +237,13 @@ body {
                         font-size: 20px;
                         width: 325px;
                         margin-top: 10px;
+                    }
+
+                    @media (max-width: 320px) {
+                        font-size: 16px;
+                        width: 250px;
+                        margin-top: 5px;
+                        letter-spacing: 2px;
                     }
 
                     &:hover {
@@ -284,6 +331,10 @@ body {
                         margin-bottom: 10px;
                         border-bottom: 5px solid @dark-blue;
                     }
+
+                    @media (max-width: 320px) {
+                        width: 250px;
+                    }
                 }
             }
 
@@ -311,6 +362,11 @@ body {
                             height: 100px;
                         }
 
+                        @media (max-width: 320px) {
+                            width: 75px;
+                            height: 75px;
+                        }
+
                         &.large {
                             width: 200px;
                             height: 200px;
@@ -318,6 +374,11 @@ body {
                             @media (max-width: 685px) {
                                 width: 150px;
                                 height: 150px;
+                            }
+
+                            @media (max-width: 320px) {
+                                width: 120px;
+                                height: 120px;
                             }
                         }
                     }
@@ -381,6 +442,13 @@ body {
                     text-align: justify;
                 }
 
+                @media (max-width: 320px) {
+                    width: 250px;
+                    padding: 0px;
+                    font-size: 20px;
+                    text-align: center;
+                }
+
                 a, a:visited {
                     color: saturate(lighten(@dark-blue, 25%), 10%);
                     text-decoration: none;
@@ -425,6 +493,15 @@ body {
                     letter-spacing: 1px;
                     color: white;
                     margin-bottom: 15px;
+
+                    @media (max-width: 450px) {
+                        text-align: center;
+                        font-size: 26px;
+                    }
+
+                    @media (max-width: 320px) {
+                        font-size: 22px;
+                    }
                 }
 
                 answer {
@@ -435,10 +512,17 @@ body {
                     font-weight: 300;
                     color: white;
 
+                    @media (max-width: 450px) {
+                        text-align: center;
+                    }
+
+                    @media (max-width: 320px) {
+                        font-size: 18px;
+                    }
+
                     a {
                         color: @electric-blue;
                         text-decoration: none;
-                        margin: 0px 3px;
                         font-weight: 400;
                         transition: color 0.5s;
 
@@ -482,6 +566,12 @@ body {
                         transition: background-color 0.5s, color 0.5s, border-color 0.5s;
                         outline: 0 none;
                         border-color: white;
+
+                        @media (max-width: 320px) {
+                            font-size: 14px;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
 
                         &:hover {
                             background: darken(@red, 20%);
@@ -530,6 +620,10 @@ body {
                         width: 100%;
                     }
 
+                    @media (max-width: 320px) {
+                        font-size: 18px;
+                    }
+
                     &:hover {
                         border: none;
                         padding: 12px;
@@ -567,6 +661,10 @@ body {
                     @media (max-width: 550px) {
                         width: 100%;
                     }
+
+                    @media (max-width: 320px) {
+                        font-size: 18px;
+                    }
                 }
 			}
         }
@@ -594,6 +692,10 @@ body {
                     width: 100%;
                 }
 
+                @media (max-width: 320px) {
+                    font-size: 18px;
+                }
+
                 &:hover {
                     color: white;
                     background-color: lighten(@dark-blue, 20%);
@@ -616,12 +718,23 @@ body {
         padding-top: 10px;
         padding-bottom: 15px;
 
+        @media (max-width: 320px) {
+            font-size: 14px;
+        }
+
         .glyphicon {
             font-size: 22px;
             padding: 0px 4px;
             color: @red;
             position: relative;
             top: 5px;
+
+            @media (max-width: 320px) {
+                font-size: 18px;
+                top: 4px;
+                padding: 0px 2px;
+                padding-right: 3px;
+            }
         }
 
         #tudev-icon {
@@ -636,6 +749,12 @@ body {
             position: relative;
             opacity: 0.9;
             top: 4px;
+
+            @media (max-width: 320px) {
+                padding: 0px 14px;
+                width: 16px;
+                height: 18px;
+            }
         }
     }
 }
