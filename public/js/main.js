@@ -34,9 +34,11 @@
             img,
             loadedImages = 0,
             $progress = $('progress-bar bar'),
+            loadingTimedOut = false,
             callback = function() {
-                ++loadedImages;
+                if (loadingTimedOut) return;
 
+                ++loadedImages;
                 $progress.css('width', (200 * loadedImages / images.length) + 'px');
                 if (loadedImages >= images.length) {
                     setTimeout(function() {
@@ -50,6 +52,15 @@
             img.onload = callback;
             img.src = images[i];
         }
+
+        // Institute a 8 second max wait time
+        setTimeout(function() {
+            loadingTimedOut = true;
+            $progress.css('width', '200px');
+            setTimeout(function() {
+                $body.removeClass('loading');
+            }, 500);
+        }, 8000);
     }
 
     $(function() {
