@@ -5,12 +5,12 @@
         images = [
             '/img/bg.jpg',
             '/img/owl.png',
-            '/img/about-build.png',
-            '/img/about-collaborate.png',
-            '/img/about-learn.png',
-            '/img/paleylibrary.jpg',
-            '/img/conwell.jpg',
-            '/img/icon-tudev.png',
+            // '/img/about-build.png',
+            // '/img/about-collaborate.png',
+            // '/img/about-learn.png',
+            // '/img/paleylibrary.jpg',
+            // '/img/conwell.jpg',
+            // '/img/icon-tudev.png',
         ];
 
     function slideTo(scrollTop) {
@@ -55,6 +55,8 @@
 
         // Institute a 2.5 second max wait time
         setTimeout(function() {
+            if (!loadingTimedOut) return;
+
             loadingTimedOut = true;
             $progress.css('width', '200px');
             setTimeout(function() {
