@@ -5,9 +5,9 @@
         images = [
             '/img/bg.jpg',
             '/img/owl.png',
-            // '/img/about-build.png',
-            // '/img/about-collaborate.png',
-            // '/img/about-learn.png',
+            '/img/about-build.png',
+            '/img/about-collaborate.png',
+            '/img/about-learn.png',
             // '/img/paleylibrary.jpg',
             // '/img/conwell.jpg',
             // '/img/icon-tudev.png',
