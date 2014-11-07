@@ -53,14 +53,14 @@
             img.src = images[i];
         }
 
-        // Institute a 8 second max wait time
+        // Institute a 3 second max wait time
         setTimeout(function() {
             loadingTimedOut = true;
             $progress.css('width', '200px');
             setTimeout(function() {
                 $body.removeClass('loading');
             }, 500);
-        }, 8000);
+        }, 3000);
     }
 
     $(function() {
