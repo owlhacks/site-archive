@@ -8,9 +8,9 @@
             '/img/about-build.png',
             '/img/about-collaborate.png',
             '/img/about-learn.png',
-            '/img/paleylibrary.jpg',
-            '/img/conwell.jpg',
-            '/img/icon-tudev.png',
+            // '/img/paleylibrary.jpg',
+            // '/img/conwell.jpg',
+            // '/img/icon-tudev.png',
         ];
 
     function slideTo(scrollTop) {
@@ -53,14 +53,16 @@
             img.src = images[i];
         }
 
-        // Institute a 8 second max wait time
+        // Institute a 2.5 second max wait time
         setTimeout(function() {
+            if (!loadingTimedOut) return;
+
             loadingTimedOut = true;
             $progress.css('width', '200px');
             setTimeout(function() {
                 $body.removeClass('loading');
             }, 500);
-        }, 8000);
+        }, 2000);
     }
 
     $(function() {
