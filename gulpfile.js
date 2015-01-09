@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     replace = require('gulp-replace'),
     nodemon = require('gulp-nodemon'),
+    clean = require('rimraf'),
     livereload = require('gulp-livereload'),
     express = require('express'),
     bodyParser = require('body-parser'),
@@ -21,37 +22,42 @@ var delay = function(fn, time) {
 
 gulp.task('less', function() {
     // Builds the CSS
-    gulp.src(['public/less/styles.less'])
+    gulp.src(['public/less/main.less'])
         .pipe(less())
-        .pipe(gulp.dest('public/dist'));
+        .pipe(gulp.dest('dist'));
 
     gulp.src(['public/less/404.less'])
         .pipe(less())
-        .pipe(gulp.dest('public/dist'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('js', function() {
     // Builds the JS
     gulp.src(['public/js/*.js'])
-        .pipe(concat('owlhacks.js'))
-        .pipe(gulp.dest('public/dist'));
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('html-dev', function() {
     // Moves and Compresses HTML
     gulp.src(['public/pages/*.html'])
         .pipe(replace('</body>', '<script src="http://localhost:35729/livereload.js"></script></body>'))
-        .pipe(gulp.dest('public/dist/pages'));
-    gulp.src(['public/partials/*.html'])
-        .pipe(gulp.dest('public/dist/partials'));
+        .pipe(gulp.dest('dist/pages'));
 });
 
 gulp.task('html', function() {
     // Moves and Compresses HTML
     gulp.src(['public/pages/*.html'])
-        .pipe(gulp.dest('public/dist/pages'));
-    gulp.src(['public/partials/*.html'])
-        .pipe(gulp.dest('public/dist/partials'));
+        .pipe(gulp.dest('dist/pages'));
+});
+
+gulp.task('assets', function() {
+    gulp.src(['public/img/**/*'])
+        .pipe(gulp.dest('dist/img'));
+    gulp.src(['public/vendor/**/*'])
+        .pipe(gulp.dest('dist/vendor'));
+    gulp.src(['public/files/**/*'])
+        .pipe(gulp.dest('dist/files'));
 });
 
 gulp.task('server-dev', function() {
@@ -126,9 +132,14 @@ gulp.task('watch', ['server-dev'], function() {
     gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
     gulp.watch('public/less/*.less', ['less']).on('change', delay(livereload.changed, 500));
     gulp.watch('public/pages/*.html', ['html-dev']).on('change', livereload.changed);
-    gulp.watch('public/partials/*.html', ['html-dev']).on('change', livereload.changed);
 });
 
-gulp.task('package', ['html', 'js', 'less']);
-gulp.task('deploy', ['package', 'githook']);
-gulp.task('default', ['watch']);
+// Clears all compiled client code
+gulp.task('clean', function() {
+    clean.sync(path.join(__dirname, 'dist'));
+});
+
+gulp.task('build', ['html', 'js', 'less', 'assets']);
+gulp.task('deploy', ['clean', 'build', 'githook']);
+gulp.task('dev', ['clean', 'build', 'watch']);
+gulp.task('default', ['dev']);

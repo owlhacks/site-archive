@@ -18,25 +18,30 @@
         <meta property="og:type" content="website" />
         <title>Owlhacks</title>
 
-        <link rel="shortcut icon" href="favicon.ico"/>
-        <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet" type="text/css">
-        <link href="/dist/styles.css" rel="stylesheet" type="text/css">
 
-        <script src="/vendor/modernizr/modernizr.js"></script>
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link href="/static/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/static/main.css" rel="stylesheet" type="text/css">
+
+        <script src="/static/vendor/modernizr/modernizr.js"></script>
     </head>
-    <body class="loading">
-        <progress-bar>
-            <bar></bar>
-        </progress-bar>
+    <body>
         <section id="splash">
-            <info>
-                <owl></owl>
-                <h1>owlhacks</h1>
-                <h2>Temple University's Hackathon</h2>
-                <h3>April 17th - 19th, 2015</h3>
-                <a class="btn btn-register" href="#/register">Register</a>
-            </info>
+            <div class="stars concealed"></div>
+            <div class="clouds concealed"></div>
+            <div class="info concealed">
+                <div class="logo"></div>
+                <div class="text">
+                    <h1>Owlhacks</h1>
+                    <h2>Hackathon @ Temple University</h2>
+                    <h3>April 17th - 19th, 2015</h3>
+                </div>
+            </div>
+            <div class="learn-more concealed">
+                <span class="text">Learn More</span>
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </div>
         </section>
         <section id="about">
             <div id="topic-container">
@@ -154,8 +159,8 @@
             ga('send', 'pageview');
         </script>
 
-        <script src="/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="/vendor/jquery.easing/js/jquery.easing.min.js"></script>
-        <script src="/dist/owlhacks.js"></script>
+        <script src="/static/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="/static/vendor/jquery.easing/js/jquery.easing.min.js"></script>
+        <script src="/static/main.js"></script>
     </body>
 </html>

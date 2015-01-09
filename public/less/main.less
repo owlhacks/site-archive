@@ -1,3 +1,5 @@
+@import "sky";
+
 @red: #9e1b34;
 @blue: #6695af;
 @orange: #c76a30;
@@ -11,38 +13,6 @@
 @blue-black: #232830;
 
 body {
-    background-color: @dark-blue;
-
-    progress-bar {
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        margin-top: -1px;
-        margin-left: -100px;
-        display: none;
-        width: 200px;
-        height: 2px;
-        background: rgba(0, 0, 0, 0.2);
-
-        bar {
-            width: 0px;
-            transition: width 500ms;
-
-            display: block;
-            background: white;
-            height: 2px;
-        }
-    }
-
-    &.loading {
-        section {
-            opacity: 0.0;
-        }
-        progress-bar {
-            display: block;
-        }
-    }
-
     section {
         display: block;
         width: 100%;
@@ -94,30 +64,33 @@ body {
 
         &#splash {
             height: 100%;
-            background-color: @dark-blue;
-            background-image: url(../img/bg.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: table;
-            padding: 0px;
 
-            info {
-                display: table-cell;
-                vertical-align: middle;
+            .info {
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                right: 0px;
+                z-index: 100;
                 text-align: center;
-                padding-top: 50px;
-                padding-bottom: 50px;
+                height: 325px;
+                margin-top: -180px;
+                opacity: 1;
+                transition: opacity 1.5s, margin-top 1.5s;
 
-                owl {
-                    display: block;
-                    background-image: url(../img/owl.png);
+                &.concealed {
+                    margin-top: -160px;
+                    opacity: 0;
+                }
+
+                .logo {
+                    display: inline-block;
+                    background-image: url(/static/img/owl.png);
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
                     width: 325px;
                     height: 325px;
-                    margin: 0 auto;
+                    vertical-align: middle;
 
                     @media (max-width: 575px) {
                         width: 250px;
@@ -130,129 +103,130 @@ body {
                     }
                 }
 
-                h1 {
-                    color: white;
-                    font-family: 'Roboto Slab', serif;
-                    font-size: 78px;
-                    text-align: center;
-                    letter-spacing: 6px;
-                    margin-top: 30px;
-                    margin-bottom: 0px;
-                    font-weight: 700;
-                    text-shadow: 0px 4px 0px #bbbbbb;
-                    text-transform: uppercase;
+                .text {
+                    display: inline-block;
+                    margin-left: 20px;
+                    vertical-align: middle;
 
-                    @media (max-width: 575px) {
-                        font-size: 64px;
-                    }
-
-                    @media (max-width: 475px) {
-                        margin-top: 20px;
-                        font-size: 50px;
-                    }
-
-                    @media (max-width: 320px) {
-                        margin-top: 20px;
-                        text-shadow: 0px 2px 0px #bbbbbb;
-                        font-size: 39px;
-                        letter-spacing: 4px;
-                    }
-                }
-
-                h2 {
-                    color: white;
-                    font-family: 'Roboto Slab', serif;
-                    font-size: 26px;
-                    text-align: center;
-                    letter-spacing: 1px;
-                    font-weight: 300;
-                    margin-top: 8px;
-                    width: auto;
-                    text-transform: uppercase;
-                    margin-bottom: 5px;
-
-                    @media (max-width: 575px) {
-                        font-size: 20px;
-                        letter-spacing: 2px;
-                    }
-
-                    @media (max-width: 475px) {
-                        font-size: 17px;
-                        letter-spacing: 1px;
-                    }
-
-                    @media (max-width: 320px) {
-                        font-size: 14px;
-                        letter-spacing: 0px;
-                    }
-                }
-
-                h3 {
-                    color: lighten(@blue, 20%);
-                    font-family: 'Roboto Slab', serif;
-                    font-size: 38px;
-                    text-align: center;
-                    letter-spacing: 2.5px;
-                    font-weight: 400;
-                    width: auto;
-                    text-transform: uppercase;
-                    margin-top: 5px;
-
-                    @media (max-width: 575px) {
-                        font-size: 32px;
-                    }
-
-                    @media (max-width: 475px) {
-                        font-size: 24px;
-                    }
-
-                    @media (max-width: 320px) {
-                        font-size: 22px;
-                        letter-spacing: 0px;
-                    }
-                }
-
-                a.btn-register {
-                    color: white;
-                    background-color: @red;
-                    font-family: 'Roboto Slab', serif;
-                    font-size: 28px;
-                    font-weight: 400;
-                    margin-top: 20px;
-                    text-transform: uppercase;
-                    letter-spacing: 3px;
-                    padding: 10px 0px;
-                    width: 500px;
-                    outline: 0 none;
-                    border-width: 0px;
-                    transition: background-color 0.5s, color 0.5s;
-
-                    @media (max-width: 575px) {
-                        font-size: 22px;
-                        width: 420px;
-                        margin-top: 10px;
-                    }
-
-                    @media (max-width: 475px) {
-                        font-size: 20px;
-                        width: 325px;
-                        margin-top: 10px;
-                    }
-
-                    @media (max-width: 320px) {
-                        font-size: 16px;
-                        width: 250px;
-                        margin-top: 5px;
-                        letter-spacing: 2px;
-                    }
-
-                    &:hover {
+                    .mixin-intro-text {
+                        display: block;
                         color: white;
-                        background-color: lighten(@red, 10%);
+                        font-family: 'Roboto Slab', serif;
+                        text-align: center;
+                        text-transform: uppercase;
                     }
 
-                    &:active {
-                        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
+                    h1 {
+                        .mixin-intro-text;
+
+                        font-size: 84px;
+                        letter-spacing: 6px;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        font-weight: 700;
+
+                        @media (max-width: 575px) {
+                            font-size: 64px;
+                        }
+
+                        @media (max-width: 475px) {
+                            margin-top: 20px;
+                            font-size: 50px;
+                        }
+
+                        @media (max-width: 320px) {
+                            margin-top: 20px;
+                            text-shadow: 0px 2px 0px #bbbbbb;
+                            font-size: 39px;
+                            letter-spacing: 4px;
+                        }
+                    }
+
+                    h2 {
+                        .mixin-intro-text;
+
+                        font-size: 23px;
+                        letter-spacing: 3.2px;
+                        font-weight: 700;
+                        margin-top: 0px;
+
+                        @media (max-width: 575px) {
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                        }
+
+                        @media (max-width: 475px) {
+                            font-size: 17px;
+                            letter-spacing: 1px;
+                        }
+
+                        @media (max-width: 320px) {
+                            font-size: 14px;
+                            letter-spacing: 0px;
+                        }
+                    }
+
+                    h3 {
+                        .mixin-intro-text;
+
+                        font-size: 47px;
+                        font-weight: 100;
+                        margin-top: 15px;
+                        margin-left: -5px;
+
+                        @media (max-width: 575px) {
+                            font-size: 32px;
+                        }
+
+                        @media (max-width: 475px) {
+                            font-size: 24px;
+                        }
+
+                        @media (max-width: 320px) {
+                            font-size: 22px;
+                            letter-spacing: 0px;
+                        }
+                    }
+                }
+            }
+
+            .learn-more {
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                color: white;
+                opacity: 0.7;
+                z-index: 200;
+                text-align: center;
+                margin-left: -100px;
+                cursor: pointer;
+                bottom: 0px;
+                opacity: 1;
+                transition: opacity 1.5s, bottom 1.5s;
+
+                &.concealed {
+                    bottom: -20px;
+                    opacity: 0;
+                }
+
+                span {
+                    display: block;
+
+                    &.text {
+                        text-transform: uppercase;
+                        font-weight: 100;
+                        font-family: 'Roboto Slab', serif;
+                        letter-spacing: 2px;
+                        font-size: 18px;
+                        padding-bottom: 5px;
+                        padding-top: 30px;
+                        padding-left: 30px;
+                        padding-right: 30px;
+                    }
+
+                    &.glyphicon {
+                        font-size: 18px;
+                        padding-bottom: 30px;
                     }
                 }
             }
@@ -260,7 +234,7 @@ body {
 
         &#about {
             background-color: @pale-blue;
-            background-image: url(../img/hackny.jpg);
+            background-image: url(/static/img/hackny.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -384,15 +358,15 @@ body {
                     }
 
                     #topic-build {
-                        background-image: url(../img/about-build.png);
+                        background-image: url(/static/img/about-build.png);
                     }
 
                     #topic-learn {
-                        background-image: url(../img/about-learn.png);
+                        background-image: url(/static/img/about-learn.png);
                     }
 
                     #topic-collaborate {
-                        background-image: url(../img/about-collaborate.png);
+                        background-image: url(/static/img/about-collaborate.png);
                     }
 
                 }
@@ -472,7 +446,7 @@ body {
 
         &#faq {
             background-color: @red;
-            background-image: url(../img/paleylibrary.jpg);
+            background-image: url(/static/img/paleylibrary.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -585,7 +559,7 @@ body {
 
         &#register {
             background-color: @orange;
-            background-image: url(../img/conwell.jpg);
+            background-image: url(/static/img/conwell.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -594,10 +568,10 @@ body {
                 color: white;
             }
 
-			form {
+            form {
                 text-align: center;
 
-				button.btn-register {
+                button.btn-register {
                     display: block;
                     width: 500px;
                     margin: 0 auto;
@@ -666,7 +640,7 @@ body {
                         font-size: 18px;
                     }
                 }
-			}
+            }
         }
 
         &#sponsors {
@@ -738,7 +712,7 @@ body {
         }
 
         #tudev-icon {
-            background-image: url(../img/icon-tudev.png);
+            background-image: url(/static/img/icon-tudev.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;

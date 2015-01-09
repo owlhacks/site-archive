@@ -1,17 +1,7 @@
 // Main Module
 (function() {
     var SECTION_HREF_REGEX = /\#\/(\w+)/;
-    var $body = $('html, body'),
-        images = [
-            '/img/bg.jpg',
-            '/img/owl.png',
-            '/img/about-build.png',
-            '/img/about-collaborate.png',
-            '/img/about-learn.png',
-            // '/img/paleylibrary.jpg',
-            // '/img/conwell.jpg',
-            // '/img/icon-tudev.png',
-        ];
+    var $body = $('html, body');
 
     function slideTo(scrollTop) {
         $body.animate({
@@ -29,50 +19,31 @@
         }
     }
 
-    function waitForImages() {
-        var i,
-            img,
-            loadedImages = 0,
-            $progress = $('progress-bar bar'),
-            loadingTimedOut = false,
-            callback = function() {
-                if (loadingTimedOut) return;
-
-                ++loadedImages;
-                $progress.css('width', (200 * loadedImages / images.length) + 'px');
-                if (loadedImages >= images.length) {
-                    setTimeout(function() {
-                        $body.removeClass('loading');
-                    }, 500);
-                }
-            };
-
-        for (i = 0; i < images.length; i++) {
-            img = new Image();
-            img.onload = callback;
-            img.src = images[i];
-        }
-
-        // Institute a 2.5 second max wait time
+    function doIntroAnimation() {
         setTimeout(function() {
-            if (!loadingTimedOut) return;
-
-            loadingTimedOut = true;
-            $progress.css('width', '200px');
-            setTimeout(function() {
-                $body.removeClass('loading');
-            }, 500);
-        }, 2000);
+            $('#splash .stars').removeClass('concealed');
+        }, 0);
+        setTimeout(function() {
+            $('#splash .clouds').removeClass('concealed');
+        }, 250);
+        setTimeout(function() {
+            $('#splash .info').removeClass('concealed');
+        }, 500);
+        setTimeout(function() {
+            $('#splash .learn-more').removeClass('concealed');
+        }, 1000);
     }
 
     $(function() {
         if ('onhashchange' in window) {
             $(window).bind('hashchange', doHashNavigation);
         }
-        waitForImages();
 
         if (!Modernizr.flexbox) {
             $('section#about .cutoff').addClass('shimmed');
         }
+
+        // Start the intro animation
+        doIntroAnimation();
     });
 })();
