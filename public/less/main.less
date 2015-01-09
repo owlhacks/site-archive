@@ -17,7 +17,7 @@ body {
         display: block;
         width: 100%;
         position: relative;
-        padding: 50px 0px;
+        padding: 50px;
         transition: opacity 0.5s;
         opacity: 1.0;
 
@@ -64,6 +64,7 @@ body {
 
         &#splash {
             height: 100%;
+            overflow: hidden;
 
             .info {
                 position: absolute;
@@ -233,214 +234,46 @@ body {
         }
 
         &#about {
-            background-color: @pale-blue;
-            background-image: url(/static/img/hackny.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: lighten(#020d1a, 5%);
             text-align: center;
+            padding: 50px 100px;
 
-            heading {
-                color: @dark-blue;
-            }
+            .slogan {
+                font-size: 64px;
+                font-family: 'Roboto Slab', serif;
+                text-transform: uppercase;
+                color: lighten(#020d1a, 70%);
+                line-height: 70px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                letter-spacing: 1px;
 
-            .cutoff {
-                display: -webkit-flex;
-                display: flex;
-
-                &.shimmed {
-                    display: block;
-
-                    .dash {
-                        display: none;
-                    }
-
-                    h2 {
-                        margin: 0 auto;
-                    }
-                }
-
-                .dash {
-                    -webkit-flex: 1;
-                    flex: 1;
-                    display: block;
-                    margin-top: 20px;
-                    height: 7px;
-                    border-top: 2px solid @dark-blue;
-                    border-bottom: 2px solid @dark-blue;
-
-                    @media (max-width: 685px) {
-                        display: none;
-                    }
-                }
-
-                h2 {
-                    -webkit-flex-basis: auto;
-                    -webkit-flex-shrink: 0;
-                    -webkit-flex-grow: 0;
-                    flex-basis: auto;
-                    flex-shrink: 0;
-                    flex-grow: 0;
-
-                    margin: 0px 30px;
-                    color: @dark-blue;
-                    font-family: 'Roboto Slab', sans-serif;
-                    font-size: 36px;
-                    text-align: center;
-                    font-weight: 700;
-                    text-transform: uppercase;
-
-                    @media (max-width: 685px) {
-                        font-size: 28px;
-                        padding-bottom: 10px;
-                        margin: 0px auto;
-                        border-bottom: 5px solid @dark-blue;
-                    }
-
-                    @media (max-width: 475px) {
-                        font-size: 22px;
-                        padding-bottom: 10px;
-                        margin: 0px auto;
-                        margin-top: -20px;
-                        margin-bottom: 10px;
-                        border-bottom: 5px solid @dark-blue;
-                    }
-
-                    @media (max-width: 320px) {
-                        width: 250px;
-                    }
+                .bright {
+                    color: #C66A23;
                 }
             }
 
-            #topic-container {
-                display: table;
-                margin: 0 auto;
+            .description {
+                font-size: 26px;
+                font-family: 'Roboto Slab', serif;
+                color: lighten(#020d1a, 70%);
+                font-weight: 300;
                 margin-bottom: 30px;
 
-                .topic {
-                    margin-bottom: 50px;
-                    display: table-cell;
-                    vertical-align: middle;
-
-                    #topic-build,
-                    #topic-learn,
-                    #topic-collaborate {
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        width: 150px;
-                        height: 150px;
-                        margin: 0 auto;
-
-                        @media (max-width: 685px) {
-                            width: 100px;
-                            height: 100px;
-                        }
-
-                        @media (max-width: 320px) {
-                            width: 75px;
-                            height: 75px;
-                        }
-
-                        &.large {
-                            width: 200px;
-                            height: 200px;
-
-                            @media (max-width: 685px) {
-                                width: 150px;
-                                height: 150px;
-                            }
-
-                            @media (max-width: 320px) {
-                                width: 120px;
-                                height: 120px;
-                            }
-                        }
-                    }
-
-                    #topic-build {
-                        background-image: url(/static/img/about-build.png);
-                    }
-
-                    #topic-learn {
-                        background-image: url(/static/img/about-learn.png);
-                    }
-
-                    #topic-collaborate {
-                        background-image: url(/static/img/about-collaborate.png);
-                    }
-
+                a, a:visited, bold {
+                    font-weight: 400;
+                    color: lighten(#020d1a, 80%);
                 }
             }
 
-            .blurb {
-                width: 1170px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 50px;
-                margin-bottom: 25px;
-                font-family: 'Roboto Slab', serif;
-                font-size: 28px;
-                text-align: center;
-                letter-spacing: 2px;
-                font-weight: 300;
-                padding: 0px;
-                color: @dark-blue;
-                transition: color 0.5s, border-color 0.5s;
+            .map-header {
+            }
 
-                @media (max-width: 1200px) {
-                    width: 100%;
-                    padding: 0px 80px;
-                    margin-left: 0px;
-                    margin-right: 0px;
-                }
-
-                @media (max-width: 685px) {
-                    width: 450px;
-                    padding: 0px 10px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-top: 20px;
-                    letter-spacing: 1px;
-                    font-size: 24px;
-                    text-align: justify;
-                }
-
-                @media (max-width: 475px) {
-                    width: 350px;
-                    padding: 0px 10px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-top: 20px;
-                    letter-spacing: 1px;
-                    font-size: 22px;
-                    text-align: justify;
-                }
-
-                @media (max-width: 320px) {
-                    width: 250px;
-                    padding: 0px;
-                    font-size: 20px;
-                    text-align: center;
-                }
-
-                a, a:visited {
-                    color: saturate(lighten(@dark-blue, 25%), 10%);
-                    text-decoration: none;
-                    transition: color 0.5s;
-
-                    &:hover {
-                        text-decoration: none;
-                        color: saturate(lighten(@dark-blue, 35%), 10%);
-                    }
-                }
-
-                bold {
-                    font-weight: 400;
-                }
-
-                italics {
-                    font-style: italic;
-                }
+            .map {
+                width: 100%;
+                height: 250px;
+                background: #dddddd;
+                border-radius: 8px;
             }
         }
 
