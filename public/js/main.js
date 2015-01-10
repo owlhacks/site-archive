@@ -34,6 +34,22 @@
         }, 1000);
     }
 
+    function setupGoogleMap() {
+        var map = new GMaps({
+            div: '#google-map',
+            lat: 39.981454,
+            lng: -75.153335
+        });
+        // Add the map marker
+        map.addMarker({
+            lat: 39.981454,
+            lng: -75.153335,
+            infoWindow: {
+                content: '<b>Owlhacks</b><br><span>The SERC</span>'
+            }
+        });
+    }
+
     $(function() {
         if ('onhashchange' in window) {
             $(window).bind('hashchange', doHashNavigation);
@@ -45,5 +61,7 @@
 
         // Start the intro animation
         doIntroAnimation();
+        // Get the map up
+        setupGoogleMap();
     });
 })();

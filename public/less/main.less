@@ -237,6 +237,7 @@ body {
             background-color: lighten(#020d1a, 5%);
             text-align: center;
             padding: 50px 100px;
+            padding-bottom: 70px;
 
             .slogan {
                 font-size: 64px;
@@ -266,14 +267,46 @@ body {
                 }
             }
 
-            .map-header {
-            }
-
             .map {
+                position: relative;
                 width: 100%;
-                height: 250px;
-                background: #dddddd;
+                height: 300px;
+                background: #cccccc;
                 border-radius: 8px;
+                overflow: hidden;
+
+                .background {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+
+                    #google-map {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                    }
+                }
+
+                .overlay {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    background: rgba(0, 0, 0, 0.6);
+                    border-top-right-radius: 8px;
+                    padding: 20px;
+                    color: white;
+                    font-family: 'Roboto Slab', serif;
+                    font-weight: 300;
+                    font-size: 16px;
+                    text-align: left;
+                    letter-spacing: 0.5px;
+
+                    .building {
+                        font-weight: 400;
+                    }
+                }
             }
         }
 
