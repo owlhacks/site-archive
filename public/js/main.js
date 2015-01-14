@@ -19,6 +19,12 @@
         }
     }
 
+    function hookUpLearnMoreScrolling() {
+        $('.learn-more').click(function() {
+            slideTo($('section#about').offset().top);
+        });
+    }
+
     function doIntroAnimation() {
         setTimeout(function() {
             $('#splash .stars').removeClass('concealed');
@@ -35,19 +41,33 @@
     }
 
     function setupGoogleMap() {
-        var map = new GMaps({
-            div: '#google-map',
-            lat: 39.981454,
-            lng: -75.153335
-        });
-        // Add the map marker
-        map.addMarker({
-            lat: 39.981454,
-            lng: -75.153335,
-            infoWindow: {
-                content: '<b>Owlhacks</b><br><span>The SERC</span>'
-            }
-        });
+        function initialize() {
+            var mapOptions = {
+                center: {
+                    lat: 39.981454,
+                    lng: -75.153335
+                },
+                zoom: 16,
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                streetViewControl: false,
+                disableDefaultUI: true,
+                draggable: false
+            };
+            var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+            // To add the marker to the map, use the 'map' property
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 39.981454,
+                    lng: -75.153335
+                },
+                map: map,
+                title: 'Hello World!'
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
     }
 
     $(function() {
@@ -63,5 +83,7 @@
         doIntroAnimation();
         // Get the map up
         setupGoogleMap();
+        // Make the learn more button scroll
+        hookUpLearnMoreScrolling();
     });
 })();

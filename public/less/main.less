@@ -236,8 +236,9 @@ body {
         &#about {
             background-color: lighten(#020d1a, 5%);
             text-align: center;
-            padding: 50px 100px;
-            padding-bottom: 70px;
+            padding: 100px;
+            padding-top: 70px;
+            padding-bottom: 90px;
 
             .slogan {
                 font-size: 64px;
@@ -250,27 +251,28 @@ body {
                 letter-spacing: 1px;
 
                 .bright {
-                    color: #C66A23;
+                    // color: saturate(#d8a35b, 20%);
+                    color: white;
                 }
             }
 
             .description {
                 font-size: 26px;
                 font-family: 'Roboto Slab', serif;
-                color: lighten(#020d1a, 70%);
+                color: desaturate(lighten(#020d1a, 80%), 20%);
                 font-weight: 300;
                 margin-bottom: 30px;
 
                 a, a:visited, bold {
                     font-weight: 400;
-                    color: lighten(#020d1a, 80%);
+                    color: desaturate(lighten(#020d1a, 80%), 20%);
                 }
             }
 
             .map {
                 position: relative;
                 width: 100%;
-                height: 300px;
+                height: 400px;
                 background: #cccccc;
                 border-radius: 8px;
                 overflow: hidden;
@@ -293,15 +295,20 @@ body {
                     position: absolute;
                     bottom: 0px;
                     left: 0px;
-                    background: rgba(0, 0, 0, 0.6);
+                    background: white;
                     border-top-right-radius: 8px;
-                    padding: 20px;
-                    color: white;
+                    border-bottom-left-radius: 8px;
+                    padding: 15px 25px;
+                    color: #666666;
                     font-family: 'Roboto Slab', serif;
                     font-weight: 300;
                     font-size: 16px;
                     text-align: left;
-                    letter-spacing: 0.5px;
+                    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+
+                    a {
+                        text-decoration: none;
+                    }
 
                     .building {
                         font-weight: 400;
