@@ -65,7 +65,10 @@ gulp.task('server-dev', function() {
     nodemon({
         script: 'index.js',
         ext: 'js',
-        ignore: ['public/*'],
+        ignore: [
+            'public/*',
+            'dist'
+        ],
         env: {
             PORT: '3000'
         }
