@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "express": "^4.9.8",
+    "port-friends": "^1.2.1",
     "request": "^2.45.0",
     "serve-favicon": "^2.1.6"
   }

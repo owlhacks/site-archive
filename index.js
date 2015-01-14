@@ -1,4 +1,5 @@
-var express = require('express'),
+var friend = require('port-friends'),
+    express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon');
 
@@ -22,6 +23,7 @@ app.get('/*', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'dist', 'pages', '404.html'));
 });
 
-app.listen(app.get('port'), function() {
-    console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
-});
+app.listen(app.get('port'), friend({
+  myport: app.get('port'),
+  mode: app.get('env')
+}));
