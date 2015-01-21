@@ -315,14 +315,34 @@ body {
         }
 
         &#faq {
-            background-color: @red;
-            background-image: url(/static/img/paleylibrary.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: lighten(#11344e, 0%);
 
             heading, subheading {
-                color: white;
+                color: #9EBCE3;
+            }
+
+            .panel.faq{
+                height: 200px;
+                border-color: #9EBCE3;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 3px;
+            }
+            
+            .panel-heading.faq{
+                font-family: 'Roboto Slab', serif;
+                text-align: center;
+                font-weight: 500;
+                color: #DBDFAC;
+                border-radius: 0px;
+                background-color: #9EBCE3;
+            }
+
+            .panel-body.faq{
+                font-family: 'Lato-light', sans-serif;
+                font-weight: 50;
+                text-align: left;
+                font-size: 20px 
             }
 
             .qa {
@@ -382,7 +402,7 @@ body {
                     }
 
                     email {
-                        background: darken(@red, 20%);
+                        background: @electric-blue;
                         padding: 6px 14px;
                         border-radius: 4px;
                         font-size: 18px;
