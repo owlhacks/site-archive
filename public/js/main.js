@@ -34,19 +34,21 @@
         }, 250);
         setTimeout(function() {
             $('#splash .info').removeClass('concealed');
-        }, 500);
+        }, 750);
         setTimeout(function() {
             $('#splash .learn-more').removeClass('concealed');
-        }, 1000);
+        }, 1250);
     }
 
     function setupGoogleMap() {
         function initialize() {
+            var center = {
+                lat: 39.981454,
+                lng: -75.153335
+            };
+
             var mapOptions = {
-                center: {
-                    lat: 39.981454,
-                    lng: -75.153335
-                },
+                center: center,
                 zoom: 16,
                 scrollwheel: false,
                 navigationControl: false,
@@ -57,6 +59,10 @@
                 draggable: false
             };
             var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+            // Make sure the map stays centered
+            google.maps.event.addDomListener(window, 'resize', function() {
+                map.setCenter(center);
+            });
             // To add the marker to the map, use the 'map' property
             var marker = new google.maps.Marker({
                 position: {

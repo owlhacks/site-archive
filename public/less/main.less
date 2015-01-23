@@ -17,7 +17,7 @@ body {
         display: block;
         width: 100%;
         position: relative;
-        padding: 50px;
+        padding: 50px 90px;
         transition: opacity 0.5s;
         opacity: 1.0;
 
@@ -234,7 +234,8 @@ body {
         }
 
         &#about {
-            background-color: lighten(#020d1a, 5%);
+            background: lighten(#020d1a, 5%) url(/static/img/about-bg.png);
+            background-size: cover;
             text-align: center;
             padding: 100px;
             padding-top: 70px;
@@ -244,28 +245,26 @@ body {
                 font-size: 64px;
                 font-family: 'Roboto Slab', serif;
                 text-transform: uppercase;
-                color: lighten(#020d1a, 70%);
+                color: white;
                 line-height: 70px;
                 margin-bottom: 20px;
                 font-weight: 700;
-                letter-spacing: 1px;
-
-                .bright {
-                    // color: saturate(#d8a35b, 20%);
-                    color: white;
-                }
+                letter-spacing: 2px;
+                text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
             }
 
             .description {
                 font-size: 26px;
                 font-family: 'Roboto Slab', serif;
-                color: desaturate(lighten(#020d1a, 80%), 20%);
+                color: white;
                 font-weight: 300;
                 margin-bottom: 30px;
+                line-height: 40px;
+                text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 
                 a, a:visited, bold {
-                    font-weight: 400;
-                    color: desaturate(lighten(#020d1a, 80%), 20%);
+                    font-weight: 300;
+                    color: white;
                 }
             }
 
@@ -318,48 +317,35 @@ body {
         }
 
         &#faq {
-            background-color: lighten(#11344e, 0%);
+            background-color: desaturate(lighten(#11344e, 10%), 10%);
 
             heading, subheading {
-                color: #9EBCE3;
+                color: lighten(#9EBCE3, 20%);
+
+                italics {
+                    font-style: italic;
+                }
             }
 
-            .panel.faq{
-                height: 200px;
-                border-color: #9EBCE3;
-                border-style: solid;
-                border-width: 1px;
-                border-radius: 3px;
-            }
-            
-            .panel-heading.faq{
-                font-family: 'Roboto Slab', serif;
-                text-align: center;
-                font-weight: 500;
-                color: #DBDFAC;
-                border-radius: 0px;
-                background-color: #9EBCE3;
-            }
-
-            .panel-body.faq{
-                font-family: 'Lato-light', sans-serif;
-                font-weight: 50;
-                text-align: left;
-                font-size: 20px 
+            .faq-container {
+                overflow: hidden;
             }
 
             .qa {
-                margin-bottom: 50px;
+                margin-bottom: 30px;
+                background: white;
+                border-radius: 4px;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+                padding: 25px;
 
-                question {
+                .question {
                     display: block;
                     font-family: 'Roboto Slab', serif;
-                    font-size: 28px;
+                    font-size: 22px;
                     text-align: left;
                     font-weight: 400;
-                    letter-spacing: 1px;
-                    color: white;
-                    margin-bottom: 15px;
+                    color: desaturate(lighten(#11344e, 10%), 10%);
+                    margin-bottom: 10px;
 
                     @media (max-width: 450px) {
                         text-align: center;
@@ -371,13 +357,13 @@ body {
                     }
                 }
 
-                answer {
+                .answer {
                     display: block;
                     font-family: 'Roboto Slab', serif;
-                    font-size: 20px;
+                    font-size: 18px;
                     text-align: left;
                     font-weight: 300;
-                    color: white;
+                    color: #666666;
 
                     @media (max-width: 450px) {
                         text-align: center;
@@ -400,8 +386,9 @@ body {
                     }
 
                     bold {
-                        font-weight: 700;
+                        font-weight: 400;
                         letter-spacing: 1px;
+                        color: desaturate(lighten(#11344e, 10%), 10%);
                     }
 
                     email {
@@ -588,23 +575,30 @@ body {
             }
             #sponsor-list{
                 margin-bottom: 40px;
-                .sponsor-group{
+
+                .sponsor-group {
                     text-align: center;
-                    .sponsor{
+
+                    .sponsor {
                         margin-bottom: 0px;
                         text-align: center;
                         display: inline-block;
+                        padding: 10px 20px;
                     }
-                    .sponsor-5{
-                        width:200px;
-                        img{
-                            width:150px;
+
+                    .sponsor-5 {
+                        width: 220px;
+
+                        img {
+                            width: 100%;
                         }
                     }
-                    .sponsor-6{
-                        width:180px;
-                        img{
-                            width:130px;
+
+                    .sponsor-6 {
+                        width: 170px;
+
+                        img {
+                            width: 100%;
                         }
                     }
                 }
