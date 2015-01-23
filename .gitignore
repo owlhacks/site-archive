@@ -36,3 +36,7 @@ public/vendor
 
 # Vim
 *.swp
+
+#Mystery File
+Thumbs.db
+
