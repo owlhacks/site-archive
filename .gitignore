@@ -38,6 +38,5 @@ public/vendor
 *.swp
 
 #Mystery File
-public/img/Thumbs.db
-public/img/sponsors/Thumbs.db
+Thumbs.db
 
