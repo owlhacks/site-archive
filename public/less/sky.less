@@ -1,3 +1,14 @@
+// Device Dimensions
+@iphone6plus-width: 414px;
+@iphone6plus-height: 736px;
+@iphone6-width: 375px;
+@iphone6-height: 667px;
+@iphone5-width: 320px;
+@iphone5-height: 568px;
+@iphone4-width: 320px;
+@iphone4-height: 480px;
+@nexus5-width: 360px;
+
 body section#splash {
     background: linear-gradient(to bottom, #020d1a 0%, #11344f 100%);
 
@@ -61,12 +72,16 @@ body section#splash {
 
     .clouds {
         background: transparent url(/static/img/clouds.png) repeat top center;
+        background-size: cover;
         z-index: 3;
 
-        -moz-animation: move-clouds-back 800s linear infinite;
-        -ms-animation: move-clouds-back 800s linear infinite;
-        -o-animation: move-clouds-back 800s linear infinite;
-        -webkit-animation: move-clouds-back 800s linear infinite;
-        animation: move-clouds-back 800s linear infinite;
+        @media (min-width: @nexus5-width) {
+            // To prevent mobile cloud animation jenk
+            -moz-animation: move-clouds-back 800s linear infinite;
+            -ms-animation: move-clouds-back 800s linear infinite;
+            -o-animation: move-clouds-back 800s linear infinite;
+            -webkit-animation: move-clouds-back 800s linear infinite;
+            animation: move-clouds-back 800s linear infinite;
+        }
     }
 }

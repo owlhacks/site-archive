@@ -96,6 +96,20 @@ body {
                     height: 530px;
                     margin-top: -265px;
                 }
+                @media (max-width: 575px) {
+                    // The logo is "too damn big" breakpoint
+                }
+                @media (max-width: @iphone6plus-width) {
+                    height: 415px;
+                    margin-top: -208px;
+                }
+                @media (max-width: @iphone5-width) {
+                    height: 325px;
+                    margin-top: -172px;
+                }
+                @media (max-height: @iphone4-height) {
+                    margin-top: -182px;
+                }
 
                 &.concealed {
                     margin-top: -160px;
@@ -113,11 +127,11 @@ body {
                     vertical-align: middle;
 
                     @media (max-width: 575px) {
+                        // The logo is "too damn big" breakpoint
                         width: 250px;
                         height: 250px;
                     }
-
-                    @media (max-width: 320px) {
+                    @media (max-width: @iphone5-width) {
                         width: 200px;
                         height: 200px;
                     }
@@ -153,19 +167,16 @@ body {
                         font-weight: 700;
 
                         @media (max-width: 575px) {
+                            // The logo is "too damn big" breakpoint
                             font-size: 64px;
                         }
-
-                        @media (max-width: 475px) {
-                            margin-top: 20px;
-                            font-size: 50px;
+                        @media (max-width: @iphone6plus-width) {
+                            font-size: 54px;
+                            letter-spacing: 2px;
                         }
-
-                        @media (max-width: 320px) {
-                            margin-top: 20px;
-                            text-shadow: 0px 2px 0px #bbbbbb;
-                            font-size: 39px;
-                            letter-spacing: 4px;
+                        @media (max-width: @iphone5-width) {
+                            font-size: 45px;
+                            letter-spacing: 1px;
                         }
                     }
 
@@ -178,18 +189,19 @@ body {
                         margin-top: 0px;
 
                         @media (max-width: 575px) {
+                            // The logo is "too damn big" breakpoint
                             font-size: 20px;
                             letter-spacing: 2px;
+                            margin-top: 5px;
+                            margin-bottom: 10px;
                         }
-
-                        @media (max-width: 475px) {
-                            font-size: 17px;
-                            letter-spacing: 1px;
-                        }
-
-                        @media (max-width: 320px) {
+                        @media (max-width: @iphone6plus-width) {
                             font-size: 14px;
-                            letter-spacing: 0px;
+                            letter-spacing: 2px;
+                        }
+                        @media (max-width: @iphone5-width) {
+                            font-size: 12px;
+                            letter-spacing: 1.5px;
                         }
                     }
 
@@ -202,16 +214,17 @@ body {
                         margin-left: -5px;
 
                         @media (max-width: 575px) {
+                            // The logo is "too damn big" breakpoint
                             font-size: 32px;
+                            margin-top: 0px;
                         }
-
-                        @media (max-width: 475px) {
-                            font-size: 24px;
+                        @media (max-width: @iphone6plus-width) {
+                            font-size: 26px;
+                            letter-spacing: 1px;
                         }
-
-                        @media (max-width: 320px) {
-                            font-size: 22px;
-                            letter-spacing: 0px;
+                        @media (max-width: @iphone5-width) {
+                            font-size: 21px;
+                            letter-spacing: 1.25px;
                         }
                     }
                 }
@@ -231,6 +244,13 @@ body {
                 opacity: 1;
                 transition: opacity 1.5s, bottom 1.5s;
 
+                @media (max-width: @iphone5-width) {
+                    margin-left: -92px;
+                }
+                @media (max-height: @iphone4-height) {
+                    margin-left: -85px;
+                }
+
                 &.concealed {
                     bottom: -20px;
                     opacity: 0;
@@ -249,11 +269,25 @@ body {
                         padding-top: 30px;
                         padding-left: 30px;
                         padding-right: 30px;
+
+                        @media (max-width: @iphone5-width) {
+                            font-size: 16px;
+                        }
+                        @media (max-height: @iphone4-height) {
+                            font-size: 14px;
+                        }
                     }
 
                     &.glyphicon {
                         font-size: 18px;
                         padding-bottom: 30px;
+
+                        @media (max-width: @iphone5-width) {
+                            font-size: 16px;
+                        }
+                        @media (max-height: @iphone4-height) {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
@@ -267,6 +301,10 @@ body {
             padding-top: 70px;
             padding-bottom: 90px;
 
+            @media (max-width: @iphone6plus-width) {
+                padding: 80px 50px;
+            }
+
             .slogan {
                 font-size: 64px;
                 font-family: 'Roboto Slab', serif;
@@ -277,6 +315,10 @@ body {
                 font-weight: 700;
                 letter-spacing: 2px;
                 text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+
+                @media (max-width: @iphone6plus-width) {
+                    margin-bottom: 50px;
+                }
             }
 
             .description {
@@ -287,6 +329,10 @@ body {
                 margin-bottom: 30px;
                 line-height: 40px;
                 text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+
+                @media (max-width: @iphone6plus-width) {
+                    margin-bottom: 50px;
+                }
 
                 a, a:visited, bold {
                     font-weight: 300;
@@ -308,6 +354,7 @@ body {
                     left: 0px;
                     right: 0px;
                     bottom: 0px;
+                    border-radius: 8px;
 
                     #google-map {
                         width: 100%;
@@ -330,6 +377,24 @@ body {
                     font-size: 16px;
                     text-align: left;
                     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+
+                    @media (max-width: 600px) {
+                        // Breakpoint for the map overlay width
+                        right: 0px;
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 8px;
+                    }
+
+                    &.safari {
+                        // Safari can't do maps + border radius apparently
+                        border-radius: 0px;
+
+                        @media (max-width: 600px) {
+                            // Breakpoint for the map overlay width
+                            right: 0px;
+                            border-radius: 0px;
+                        }
+                    }
 
                     a {
                         text-decoration: none;

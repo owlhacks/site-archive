@@ -74,6 +74,12 @@
             });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
+        // Check if we're in safari
+        var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+        if (isSafari) {
+            // Handle safari's chicken shit
+            $('.map .overlay').addClass('safari');
+        }
     }
 
     $(function() {
