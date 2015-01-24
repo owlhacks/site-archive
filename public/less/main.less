@@ -12,6 +12,18 @@
 @pale-blue: #e0e8ea;
 @blue-black: #232830;
 
+// Device Dimensions
+@iphone6plus-width: 414px;
+@iphone6plus-height: 736px;
+@iphone6-width: 375px;
+@iphone6-height: 667px;
+@iphone5-width: 320px;
+@iphone5-height: 568px;
+@iphone4-width: 320px;
+@iphone4-height: 480px;
+@nexus5-width: 360px;
+@nexus5-height: 640px;
+
 body {
     section {
         display: block;
@@ -20,6 +32,7 @@ body {
         padding: 50px 90px;
         transition: opacity 0.5s;
         opacity: 1.0;
+        overflow: hidden;
 
         @media (max-width: 320px) {
             padding: 25px 0px;
@@ -78,6 +91,12 @@ body {
                 opacity: 1;
                 transition: opacity 1.5s, margin-top 1.5s;
 
+                @media (max-width: 900px) {
+                    // Breakpoint for landscape format
+                    height: 530px;
+                    margin-top: -265px;
+                }
+
                 &.concealed {
                     margin-top: -160px;
                     opacity: 0;
@@ -108,6 +127,13 @@ body {
                     display: inline-block;
                     margin-left: 20px;
                     vertical-align: middle;
+
+                    @media (max-width: 900px) {
+                        // Breakpoint for landscape
+                        display: block;
+                        margin-top: 10px;
+                        margin-left: 0px;
+                    }
 
                     .mixin-intro-text {
                         display: block;
