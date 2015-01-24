@@ -301,6 +301,10 @@ body {
             padding-top: 70px;
             padding-bottom: 90px;
 
+            @media (max-width: @iphone6plus-width) {
+                padding: 80px 50px;
+            }
+
             .slogan {
                 font-size: 64px;
                 font-family: 'Roboto Slab', serif;
@@ -311,6 +315,10 @@ body {
                 font-weight: 700;
                 letter-spacing: 2px;
                 text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+
+                @media (max-width: @iphone6plus-width) {
+                    margin-bottom: 50px;
+                }
             }
 
             .description {
@@ -321,6 +329,10 @@ body {
                 margin-bottom: 30px;
                 line-height: 40px;
                 text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+
+                @media (max-width: @iphone6plus-width) {
+                    margin-bottom: 50px;
+                }
 
                 a, a:visited, bold {
                     font-weight: 300;
@@ -342,6 +354,7 @@ body {
                     left: 0px;
                     right: 0px;
                     bottom: 0px;
+                    border-radius: 8px;
 
                     #google-map {
                         width: 100%;
@@ -364,6 +377,24 @@ body {
                     font-size: 16px;
                     text-align: left;
                     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+
+                    @media (max-width: 600px) {
+                        // Breakpoint for the map overlay width
+                        right: 0px;
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 8px;
+                    }
+
+                    &.safari {
+                        // Safari can't do maps + border radius apparently
+                        border-radius: 0px;
+
+                        @media (max-width: 600px) {
+                            // Breakpoint for the map overlay width
+                            right: 0px;
+                            border-radius: 0px;
+                        }
+                    }
 
                     a {
                         text-decoration: none;
