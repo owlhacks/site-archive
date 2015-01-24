@@ -464,8 +464,8 @@ body {
         }
 
         &#register {
-            background-color: @orange;
-            background-image: url(/static/img/conwell.jpg);
+            background-color: desaturate(lighten(#020d1a, 10%), 10%);
+            background-image: url(/static/img/stars.png);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -507,7 +507,7 @@ body {
                     &:hover {
                         border: none;
                         padding: 12px;
-                        color: @orange;
+                        color: lighten(#020d1a, 10%);
                         background-color: white;
                         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
                     }
@@ -515,8 +515,8 @@ body {
                     &:active {
                         border: none;
                         padding: 12px;
-                        color: @orange;
-                        background-color: white;
+                        color: lighten(#020d1a, 10%);
+                        background-color: #444;
                         box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
                     }
                 }
