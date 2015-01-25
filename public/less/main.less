@@ -40,22 +40,21 @@ body {
 
         heading {
             display: block;
+            width: 100%;
+            text-align: center;
             margin-bottom: 40px;
             font-family: 'Roboto Slab', serif;
             font-size: 48px;
-            text-align: center;
             font-weight: 400;
 
             @media (max-width: 320px) {
                 font-size: 36px;
-                width: 300px;
-                margin-left: auto;
-                margin-right: auto;
             }
         }
 
         subheading {
             display: block;
+            width: 100%;
             margin-top: -40px;
             margin-bottom: 40px;
             font-family: 'Roboto Slab', serif;
@@ -69,9 +68,6 @@ body {
 
             @media (max-width: 320px) {
                 font-size: 18px;
-                width: 300px;
-                margin-left: auto;
-                margin-right: auto;
             }
         }
 
@@ -376,6 +372,9 @@ body {
                         border-radius: 8px;
 
                         @media (max-width: @iphone6plus-width) {
+                            height: 225px;
+                        }
+                        @media (max-width: @iphone6-width) {
                             height: 200px;
                         }
                     }
@@ -428,8 +427,9 @@ body {
 
         &#faq {
             background-color: desaturate(lighten(#11344e, 10%), 10%);
+
             @media (max-width: @iphone6plus-width) {
-                    padding: 40px 5px;
+                padding: 40px 5px;
             }
 
             heading, subheading {
@@ -547,14 +547,17 @@ body {
         }
 
         &#register {
-            background-color: @orange;
-            background-image: url(/static/img/conwell.jpg);
+            background-color: @blue;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
 
             heading, subheading {
                 color: white;
+            }
+
+            @media (max-width: @iphone6plus-width) {
+                padding: 40px 20px;
             }
 
             form {
@@ -570,7 +573,7 @@ body {
                     border: 2px solid white;
                     font-family: 'Roboto Slab', serif;
                     font-size: 22px;
-                    font-weight: 400;
+                    font-weight: 700;
                     margin-top: 20px;
                     text-transform: uppercase;
                     letter-spacing: 3px;
@@ -579,7 +582,7 @@ body {
                     box-shadow: none;
                     transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 
-                    @media (max-width: 550px) {
+                    @media (max-width: 700px) {
                         width: 100%;
                     }
 
@@ -590,9 +593,9 @@ body {
                     &:hover {
                         border: none;
                         padding: 12px;
-                        color: @orange;
+                        color: @blue;
                         background-color: white;
-                        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+                        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
                     }
 
                     &:active {
@@ -621,7 +624,7 @@ body {
                     border: none;
                     border-radius: 4px;
 
-                    @media (max-width: 550px) {
+                    @media (max-width: 700px) {
                         width: 100%;
                     }
 
@@ -635,74 +638,58 @@ body {
         &#sponsors {
             background: white;
             text-align: center;
-          
+
             @media (max-width: @iphone6plus-width) {
                 padding: 40px 20px;
-                
             }
-          
-            .btn-sponsor {
-                display: inline-block;
+
+            .btn {
+                display: block;
                 color: white;
                 width: 500px;
-                background-color: @dark-blue;
-                margin: 10px auto;
+                margin: 15px auto;
                 font-family: 'Roboto Slab', serif;
-                font-size: 20px;
                 font-weight: 700;
+                font-size: 22px;
                 text-transform: uppercase;
-                letter-spacing: 3px; 
+                letter-spacing: 3px;
                 padding: 15px 0px;
                 outline: 0 none;
                 border-width: 0px;
                 transition: background-color 0.5s;
 
-                @media (max-width: 550px) {
+                @media (max-width: 700px) {
                     width: 100%;
                 }
-
-                @media (max-width: 320px) {
+                @media (max-width: @iphone6-width) {
                     font-size: 18px;
                 }
 
                 &:hover {
                     color: white;
-                    background: lighten(@dark-blue, 20%);
                 }
 
                 &:active {
                     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5) inset;
                 }
-                .glyphicon {
-                    font-size: 22px;
-                    padding: 0px 4px;
-                    color: @red;
-                    position: relative;
-                    top: 5px;
+            }
 
-                    @media (max-width: 320px) {
-                        font-size: 18px;
-                        top: 4px;
-                        padding: 0px 2px;
-                        padding-right: 3px;
-                    }
+            .btn-sponsor {
+                background-color: @dark-blue;
+
+                &:hover {
+                    background: lighten(@dark-blue, 20%);
                 }
             }
-            
-            a.btn-mentor {
-              .btn-sponsor;
-              display: inline-block;
-              margin-left: 4%;
-              background-color: @blue;
-              
-              @media (max-width: @iphone6plus-width) {
-                margin-left: 0px;
-            }
-              &:hover {
-                    color: white;
+
+            .btn-mentor {
+                background-color: @blue;
+
+                &:hover {
                     background: lighten(@blue, 10%);
                 }
             }
+
             #sponsor-list{
                 margin-bottom: 40px;
                 text-align: center;

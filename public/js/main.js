@@ -55,6 +55,21 @@
         $about.css('backgroundImage', pattern.dataUrl);
     }
 
+    function makeRegisterBackground() {
+        var $register = $('section#register'),
+            registerWidth = $register.width(),
+            registerHeight = $register.height(),
+            trianglifier = new Trianglify({
+                x_gradient: ['#5689a5', '#6695af', '#87acc1']
+            }),
+            pattern = trianglifier.generate(
+                registerWidth,
+                registerHeight
+            );
+        // Set the background of the div
+        $register.css('backgroundImage', pattern.dataUrl);
+    }
+
     function setupGoogleMap() {
         function initialize() {
             var center = {
@@ -106,13 +121,14 @@
             $('section#about .cutoff').addClass('shimmed');
         }
 
+        // Paint the geometric backgrounds
+        makeAboutBackground();
+        makeRegisterBackground();
         // Start the intro animation
         doIntroAnimation();
         // Get the map up
         setupGoogleMap();
         // Make the learn more button scroll
         hookUpLearnMoreScrolling();
-        // Paint the about background
-        makeAboutBackground();
     });
 })();
