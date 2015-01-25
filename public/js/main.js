@@ -70,6 +70,21 @@
         $register.css('backgroundImage', pattern.dataUrl);
     }
 
+    function makeFaqBackground() {
+        var $faq = $('section#faq'),
+            faqWidth = $faq.width(),
+            faqHeight = $faq.height(),
+            trianglifier = new Trianglify({
+                x_gradient: ['#478592', '#346e83', '#2d5471']
+            }),
+            pattern = trianglifier.generate(
+                faqWidth,
+                faqHeight
+            );
+        // Set the background of the div
+        $faq.css('backgroundImage', pattern.dataUrl);
+    }
+
     function setupGoogleMap() {
         function initialize() {
             var center = {
@@ -123,6 +138,7 @@
 
         // Paint the geometric backgrounds
         makeAboutBackground();
+        makeFaqBackground();
         makeRegisterBackground();
         // Start the intro animation
         doIntroAnimation();
