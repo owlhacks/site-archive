@@ -40,6 +40,21 @@
         }, 1250);
     }
 
+    function makeAboutBackground() {
+        var $about = $('section#about'),
+            aboutWidth = $about.width(),
+            aboutHeight = $about.height(),
+            trianglifier = new Trianglify({
+                x_gradient: ['#041932', '#11344f', '#0c263a']
+            }),
+            pattern = trianglifier.generate(
+                aboutWidth,
+                aboutHeight
+            );
+        // Set the background of the div
+        $about.css('backgroundImage', pattern.dataUrl);
+    }
+
     function setupGoogleMap() {
         function initialize() {
             var center = {
@@ -97,5 +112,7 @@
         setupGoogleMap();
         // Make the learn more button scroll
         hookUpLearnMoreScrolling();
+        // Paint the about background
+        makeAboutBackground();
     });
 })();
