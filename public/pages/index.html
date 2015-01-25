@@ -4,117 +4,131 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A premier hackathon in Philadelphia.">
+        <meta name="description" content="A premier hackathon hosted by Temple University // April 17-19, 2015" />
         <meta name="author" content="Temple Dev">
         <meta name="keywords" content="temple, computer, science, software, hackathon, owlhacks, mlh">
-        <meta property="og:site_name" content="Owlhacks 2015" />
-        <meta property="og:title" content="Coming Soon!" />
-        <meta property="og:site_name" content="Owlhacks" />
-        <meta property="og:url" content="http://owlhacks.com" />
-        <meta property="og:description" content="Premiere hackathon hosted at Temple University April 10-12, 2015. LEARN. COLLABORATE. BUILD." />
-        <meta name="google-site-verification" content="tagdcKfYAhgckLZ5yRDVj89IIJ3k2KG4WRrLchd_OWU" />
-        <meta property="og:image" content="http://www.owlhacks.com/img/owl.png" />
-        <meta property="og:image:url" content="http://owlhacks.com/img/owl.png" />
+
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Owlhacks Spring 2015" />
+        <meta property="og:title" content="Owlhacks Spring 2015" />
+        <meta property="og:url" content="http://owlhacks.com" />
+        <meta property="og:description" content="A premier hackathon hosted by Temple University // April 17-19, 2015" />
+        <meta property="og:image" content="http://owlhacks.com/static/img/og.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
+
         <title>Owlhacks</title>
 
-        <link rel="shortcut icon" href="favicon.ico"/>
-        <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet" type="text/css">
-        <link href="/dist/styles.css" rel="stylesheet" type="text/css">
 
-        <script src="/vendor/modernizr/modernizr.js"></script>
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link href="/static/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/static/main.css" rel="stylesheet" type="text/css">
+
+        <script src="/static/vendor/modernizr/modernizr.js"></script>
+        <script src="//maps.google.com/maps/api/js?sensor=true"></script>
     </head>
-    <body class="loading">
-        <progress-bar>
-            <bar></bar>
-        </progress-bar>
+    <body>
         <section id="splash">
-            <info>
-                <owl></owl>
-                <h1>owlhacks</h1>
-                <h2>Temple University's Hackathon</h2>
-                <h3>April 17th - 19th, 2015</h3>
-                <a class="btn btn-register" href="#/register">Register</a>
-            </info>
+            <div class="stars concealed"></div>
+            <div class="clouds concealed"></div>
+            <div class="info concealed">
+                <div class="logo"></div>
+                <div class="text">
+                    <h1>Owlhacks</h1>
+                    <h2>Hackathon @ Temple University</h2>
+                    <h3>April 17th - 19th, 2015</h3>
+                </div>
+            </div>
+            <div class="learn-more concealed">
+                <span class="text">Learn More</span>
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </div>
         </section>
         <section id="about">
-            <div id="topic-container">
-                <div class="topic">
-                    <div id="topic-learn"></div>
-                </div>
-                <div class="topic">
-                    <div id="topic-collaborate" class="large"></div>
-                </div>
-                <div class="topic">
-                    <div id="topic-build"></div>
-                </div>
+            <div class="slogan">Let's Hack Owl Night</div>
+            <div class="description">
+                Owlhacks is a premier <a href="http://mlh.io/about" target="_blank">hackathon</a> in Philadelphia organized by students from Temple University. In April, 500&nbsp;students will come to the Science, Education &amp; Research Center in Philadelphia to learn, collaborate and build over the course of 36&nbsp;hours.
             </div>
-            <div class="cutoff">
-                <div class="dash"></div>
-                <h2>Learn. Collaborate. Build.</h2>
-                <div class="dash"></div>
-            </div>
-            <div class="blurb">
-                <bold>Owlhacks is a premier <a href="http://mlh.io/about" target="_blank">hackathon</a> in Philadelphia</bold> organized by students from Temple University. In April, <bold>500&nbsp;students</bold> will come to Philadelphia to learn, collaborate and build over the course of <bold>36&nbsp;hours</bold>. We recognize that hacking is about camraderie <italics>and</italics> technology, and we aim to facilitate the spirit of community inherent in #hackerculture.
+            <div class="map">
+                <div class="background">
+                    <div id="google-map"></div>
+                </div>
+                <div class="overlay">
+                    <div class="building"><a href="https://www.google.com/maps?saddr=Current+Location&daddr=1925+N+12th+St+Philadelphia+PA" target="_blank">Science, Education &amp; Research Center</a></div>
+                    <div class="address">1925 N 12th St, Philadelphia, PA 19121</div>
+                </div>
             </div>
         </section>
         <section id="faq">
-            <heading>FAQ</heading>
-            <subheading>What You Need To Know</subheading>
-            <div class="container">
-                <div class="col-lg-4 col-md-6">
+            <heading>Our FAQ</heading>
+            <subheading>Answers to <italics>OWL</italics> of your questions</subheading>
+            <div class="faq-container">
+                <div class="col-md-4 col-sm-6">
                     <div class="qa">
-                        <question>When is Owlhacks?</question>
-                        <answer>Owlhacks will begin on the evening of <bold>Friday, April&nbsp;10th</bold> at <bold>8pm</bold> and will end with the at <bold>4pm</bold> on <bold>April&nbsp;12th</bold>.</answer>
-                    </div>
-                    <div class="qa" style="display: none;">
-                        <question>What's the schedule?</question>
-                        <answer>Owlhacks follows a pretty typical 36-hours hour hackathon schedule. You can checkout the official schedule for specifics:
-                        <a class="btn btn-default" href="/schedule">Official Schedule</a>
-                        </answer>
+                        <div class="question">When is Owlhacks?</div>
+                        <div class="answer">
+                            Owlhacks will begin on the evening of <bold>Friday, April 17th</bold> at <bold>8pm</bold> and will end on <bold>April 19th</bold> at <bold>4pm</bold>.
+                        </div>
                     </div>
                     <div class="qa">
-                        <question>Who participates in Owlhacks?</question>
-                        <answer>All the awesomest student developers under the sun! Owlhacks is open for any student to attend - beginners included. If you're a student, make sure you <a href="#/register">register</a>.</answer>
+                        <div class="question">Who can participate in Owlhacks?</div>
+                        <div class="answer">
+                            All the most awesome student developers under the sun! Owlhacks is open for any student to attend - beginners included. If you're a student, make sure you register.
+                        </div>
                     </div>
                     <div class="qa">
-                        <question>Why come to Owlhacks?</question>
-                        <answer>Owlhacks is an opportunity to grow as a creator, not just a developer. You'll be surrounded by some of the most creative and analytical minds in the country. Some of the most cutting-edge tchnologies will be on display, and by the end of the weekend, you could even win an award.</answer>
+                        <div class="question">How do I get in?</div>
+                        <div class="answer">
+                            The first step to getting into Owlhacks is applying. When you register, you submit a bunch of information about yourself that helps us decide if you'd be a good fit for Owlhacks. After we make a decision, we'll send you an email with the results.
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="qa">
-                        <question>Where is Owlhacks?</question>
-                        <answer>Owlhacks will be held in Temple University's <bold>Science, Education &amp; Research Center (<a href="#/venue">details</a>)</bold>.</answer>
+                        <div class="question">Why come to Owlhacks?</div>
+                        <div class="answer">
+                            Owlhacks is an opportunity to grow as a creator, not just a developer. You'll be surrounded by some of the most creative and analytical minds in the country. Some of the most cutting-edge tchnologies will be on display, and by the end of the weekend, you could even win an award.
+                        </div>
                     </div>
                     <div class="qa">
-                        <question>How do I get in?</question>
-                        <answer>The first step to getting into Owlhacks is <a href="#/register">applying</a>. When you register, you submit a bunch of information about yourself that helps us decide if you'd be a good fit for Owlhacks. After we make a decision, we'll send you an email with the results.</answer>
+                        <div class="question">Do Temple University students have to apply?</div>
+                        <div class="answer">
+                            Nope! We will have internal applications just for Temple University students. Keep watching your inbox for more information.
+                        </div>
                     </div>
                     <div class="qa">
-                        <question>Do Temple University students have to apply?</question>
-                        <answer>Nope! We will have internal applications just for Temple University students. Keep watching your inbox for more information.</answer>
-                    </div>
-                    <div class="qa">
-                        <question>How do I get involved if I'm not a student?</question>
-                        <answer>Only students can be hackers, but advisors are always handy. Shoot us an email if you're interested.</answer>
+                        <div class="question">How do I get involved if I'm not a student?</div>
+                        <div class="answer">
+                            Only students can be hackers, but advisors are always handy. Shoot us an email if you're interested.
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="qa" style="display: none;">
-                        <question>Will there be travel reimbursement?</question>
-                        <answer>The short answer is no. We will not be compensating your travel to Owlhacks in most cases, <bold>BUT</bold> we're sending buses to some major hacker hubs in the region. Make sure you checkout our bus schedule. You can reserve a spot as soon as registration opens!
-                        <a class="btn btn-default" href="/travel">Bus Info</a>
-                        </answer>
+                <div class="col-md-4 col-sm-12">
+                    <div class="qa">
+                        <div class="question">How much does Owlhacks cost?</div>
+                        <div class="answer">
+                           Nothing! You don't need money to come to Owlhacks, just the willingness to learn and enthusiasm to create. You'll get free food and swag throughout the weekend - all you have to do is show up.
+                        </div>
                     </div>
                     <div class="qa">
-                        <question>How much does Owlhacks cost?</question>
-                        <answer>Nothing! You don't need money to come to Owlhacks, just the willingness to learn and enthusiasm to create. You'll get free food and swag throughout the weekend - all you have to do is show up.</answer>
+                        <div class="question">Can High School students participate?</div>
+                        <div class="answer">
+                            All we require from our applicants is a <bold>.edu email address</bold>. If you're in high school, and you have an appropriate email address, then you can apply to come to Owlhacks.
+                        </div>
                     </div>
                     <div class="qa">
-                        <question>Who do I talk to if I have any questions?</question>
-                        <answer>If you have any questions or comments at all, don't hesistate to send an email to <email><a href="mailto:team@owlhacks.com">team@owlhacks.com</a></email></answer>
+                        <div class="question">Who do I talk to if I have any questions?</div>
+                        <div class="answer">
+                            If you have any questions or comments at all, don't hesistate to send an email to <bold>team@owlhacks.com</bold>.
+                        </div>
+                    </div>
+                    <div class="qa">
+                        <div class="question">How big can teams be?</div>
+                        <div class="answer">
+                            We allow up to <bold>4 people</bold> per team.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,28 +136,50 @@
         <section id="register">
             <heading>Email Sign Up</heading>
             <subheading>Get&nbsp;Notified&nbsp;When Registration Opens</subheading>
-            <div class="container">
-                <form action="http://owlhacks.us9.list-manage1.com/subscribe/post" method="POST">
-                    <input type="hidden" name="u" value="2ba67714be28ca4bfea56f96a">
-                    <input type="hidden" name="id" value="428f20bace">
-                    <input id="first-name" class="form-input" placeholder="First Name" type="text" name="MERGE1" id="MERGE1" size="25" value="" required>
-                    <input id="last-name" class="form-input" placeholder="Last Name" type="text" name="MERGE2" id="MERGE2" size="25" value="" required>
-                    <input type="email" class="form-input" placeholder="Email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" required>
-                    <button type="submit" class="btn btn-register">Sign Up</button>
-                </form>
-            </div>
+            <form action="http://owlhacks.us9.list-manage1.com/subscribe/post" method="POST">
+                <input type="hidden" name="u" value="2ba67714be28ca4bfea56f96a">
+                <input type="hidden" name="id" value="428f20bace">
+                <input id="first-name" class="form-input" placeholder="First Name" type="text" name="MERGE1" id="MERGE1" size="25" value="" required>
+                <input id="last-name" class="form-input" placeholder="Last Name" type="text" name="MERGE2" id="MERGE2" size="25" value="" required>
+                <input type="email" class="form-input" placeholder="Email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" required>
+                <button type="submit" class="btn btn-register">Sign Up</button>
+            </form>
         </section>
         <section id="sponsors">
             <heading>Sponsors</heading>
             <subheading>People Who Support Us</subheading>
-            <div class="container">
-                <a class="btn btn-sponsor" href="mailto:team@owlhacks.com">Become a Sponsor</a>
+            <div id="sponsor-list">
+                <div class ="sponsor-group"></div>
+                <div class ="sponsor-group"></div>
+                <div class ="sponsor-group"></div>
+                <div class ="sponsor-group"></div>
+                <div class ="sponsor-group">
+                    <div class="sponsor sponsor-5">
+                        <a href="https://www.dwolla.com/"><img src="/static/img/sponsors/dwolla.png"></a>
+                    </div>
+                    <div class="sponsor sponsor-5">
+                        <a href="http://www.ordrx.com/"><img src="/static/img/sponsors/ordrx.png"></a>
+                    </div>
+                    <div class="sponsor sponsor-5">
+                        <a href="http://www.wolframalpha.com/"><img src="/static/img/sponsors/wolframalpha.png"></a>
+                    </div>
+                </div>
+                <div class="sponsor-group">
+                    <div class="sponsor sponsor-6">
+                        <a href="https://www.addteq.com/"><img src="/static/img/sponsors/addteq"></a>
+                    </div>
+                    <div class="sponsor sponsor-6">
+                        <a href="https://www.filepicker.io/"><img src="/static/img/sponsors/filepicker.png"></a>
+                    </div>
+                </div>
             </div>
+            <a class="btn btn-sponsor" href="/sponsor.pdf" download="Owlhacks Spring 2015 Sponsor Document.pdf">Sponsor</a>
+            <a class="btn btn-mentor" href="/mentor">Mentor</a>
+
         </section>
         <footer>
             <span>Made with</span> <span class="glyphicon glyphicon-heart"></span> <span>by</span> <a href="http://tudev.org" id="tudev-icon"></a> <span>in Philadelphia</span>
         </footer>
-
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -154,8 +190,10 @@
             ga('send', 'pageview');
         </script>
 
-        <script src="/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="/vendor/jquery.easing/js/jquery.easing.min.js"></script>
-        <script src="/dist/owlhacks.js"></script>
+        <script src="/static/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="/static/vendor/jquery.easing/js/jquery.easing.min.js"></script>
+        <script src="/static/vendor/d3/d3.min.js"></script>
+        <script src="/static/vendor/trianglify/trianglify.min.js"></script>
+        <script src="/static/main.js"></script>
     </body>
 </html>

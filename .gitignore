@@ -28,8 +28,15 @@ node_modules
 .lock-wscript
 
 # Ignore dist
-public/dist
+dist
 public/vendor
 
 # OSX
 .DS_Store
+
+# Vim
+*.swp
+
+#Mystery File
+Thumbs.db
+
