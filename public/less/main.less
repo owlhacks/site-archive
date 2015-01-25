@@ -428,6 +428,9 @@ body {
 
         &#faq {
             background-color: desaturate(lighten(#11344e, 10%), 10%);
+            @media (max-width: @iphone6plus-width) {
+                    padding: 40px 5px;
+            }
 
             heading, subheading {
                 color: lighten(#9EBCE3, 20%);
@@ -474,10 +477,6 @@ body {
                     text-align: left;
                     font-weight: 300;
                     color: #666666;
-
-                    @media (max-width: 450px) {
-                        text-align: center;
-                    }
 
                     @media (max-width: 320px) {
                         font-size: 18px;
@@ -635,18 +634,24 @@ body {
 
         &#sponsors {
             background: white;
-
-            a.btn-sponsor {
-                display: block;
+            text-align: center;
+          
+            @media (max-width: @iphone6plus-width) {
+                padding: 40px 20px;
+                
+            }
+          
+            .btn-sponsor {
+                display: inline-block;
                 color: white;
                 width: 500px;
                 background-color: @dark-blue;
-                margin: 15px auto;
+                margin: 10px auto;
                 font-family: 'Roboto Slab', serif;
-                font-size: 22px;
-                font-weight: 400;
+                font-size: 20px;
+                font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: 3px;
+                letter-spacing: 3px; 
                 padding: 15px 0px;
                 outline: 0 none;
                 border-width: 0px;
@@ -662,7 +667,7 @@ body {
 
                 &:hover {
                     color: white;
-                    background-color: lighten(@dark-blue, 20%);
+                    background: lighten(@dark-blue, 20%);
                 }
 
                 &:active {
@@ -683,11 +688,27 @@ body {
                     }
                 }
             }
+            
+            a.btn-mentor {
+              .btn-sponsor;
+              display: inline-block;
+              margin-left: 4%;
+              background-color: @blue;
+              
+              @media (max-width: @iphone6plus-width) {
+                margin-left: 0px;
+            }
+              &:hover {
+                    color: white;
+                    background: lighten(@blue, 10%);
+                }
+            }
             #sponsor-list{
                 margin-bottom: 40px;
+                text-align: center;
 
                 .sponsor-group {
-                    text-align: center;
+                    display: inline-block;
 
                     .sponsor {
                         margin-bottom: 0px;
