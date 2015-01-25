@@ -75,7 +75,7 @@
             faqWidth = $faq.width(),
             faqHeight = $faq.height(),
             trianglifier = new Trianglify({
-                x_gradient: ['#478592', '#346e83', '#2d5471']
+                x_gradient: ['#3b7d95', '#346e83', '#2d5471']
             }),
             pattern = trianglifier.generate(
                 faqWidth,
