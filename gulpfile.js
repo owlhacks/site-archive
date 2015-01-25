@@ -12,7 +12,10 @@ var gulp = require('gulp'),
     async = require('async'),
     exec = require('child_process').exec,
     git = require('gulp-git'),
-    http = require('http');
+    http = require('http'),
+    uglify = require('gulp-uglify'),
+    minifyCSS = require('gulp-minify-css'),
+    minifyHTML = require('gulp-minify-html');
 
 var delay = function(fn, time) {
     return function() {
@@ -20,20 +23,34 @@ var delay = function(fn, time) {
     };
 };
 
-gulp.task('less', function() {
+gulp.task('less-dev', function() {
     // Builds the CSS
     gulp.src(['public/less/main.less'])
         .pipe(less())
         .pipe(gulp.dest('dist'));
+});
 
-    gulp.src(['public/less/404.less'])
+gulp.task('less-prod', function() {
+    // Builds the CSS
+    gulp.src(['public/less/main.less'])
         .pipe(less())
+        .pipe(minifyCSS({
+            advanced: true
+        }))
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('js', function() {
+gulp.task('js-dev', function() {
     // Builds the JS
     gulp.src(['public/js/*.js'])
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('js-prod', function() {
+    // Builds the JS
+    gulp.src(['public/js/*.js'])
+        .pipe(uglify())
         .pipe(concat('main.js'))
         .pipe(gulp.dest('dist'));
 });
@@ -45,9 +62,13 @@ gulp.task('html-dev', function() {
         .pipe(gulp.dest('dist/pages'));
 });
 
-gulp.task('html', function() {
+gulp.task('html-prod', function() {
     // Moves and Compresses HTML
     gulp.src(['public/pages/*.html'])
+        .pipe(minifyHTML({
+            empty: true,
+            quotes: true
+        }))
         .pipe(gulp.dest('dist/pages'));
 });
 
@@ -142,7 +163,8 @@ gulp.task('clean', function() {
     clean.sync(path.join(__dirname, 'dist'));
 });
 
-gulp.task('build', ['html', 'js', 'less', 'assets']);
-gulp.task('deploy', ['clean', 'build', 'githook']);
+gulp.task('build', ['html-dev', 'js-dev', 'less-dev', 'assets']);
+gulp.task('deploy', ['html-prod', 'js-prod', 'less-prod', 'assets']);
 gulp.task('dev', ['clean', 'build', 'watch']);
+gulp.task('prod', ['clean', 'deploy', 'githook']);
 gulp.task('default', ['dev']);
