@@ -29,8 +29,7 @@ Install dependencies:
 
   Use [gulp](http://gulpjs.com/) to start the server:
 
-    $ gulp package
-    $ gulp
+    $ gulp dev
     
   Then open a browser and go to:
 
@@ -47,7 +46,7 @@ Install dependencies:
 
 Use [gulp](http://gulpjs.com/) to build the assets of the server:
 
-    $ gulp package
+    $ gulp clean deploy
     
 Use [forever](https://github.com/nodejitsu/forever) to run the server:
 
@@ -56,7 +55,7 @@ Use [forever](https://github.com/nodejitsu/forever) to run the server:
 Open `tmux`, then setup the githook:
 
     $ tmux
-    $ gulp githook
+    $ gulp prod
 
 The site is now running on *port 80*, and the githook is running on *port 4000*.
 
