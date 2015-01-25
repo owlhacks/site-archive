@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     http = require('http'),
     uglify = require('gulp-uglify'),
     minifyCSS = require('gulp-minify-css'),
-    minifyHTML = require('gulp-minify-html');
+    htmlmin = require('gulp-htmlmin');
 
 var delay = function(fn, time) {
     return function() {
@@ -65,9 +65,13 @@ gulp.task('html-dev', function() {
 gulp.task('html-prod', function() {
     // Moves and Compresses HTML
     gulp.src(['public/pages/*.html'])
-        .pipe(minifyHTML({
-            empty: true,
-            quotes: true
+        .pipe(htmlmin({
+            removeComments: true,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            caseSensitive: true,
+            minifyJS: true,
+            keepClosingSlash: true
         }))
         .pipe(gulp.dest('dist/pages'));
 });
