@@ -108,10 +108,10 @@ gulp.task('githook', function() {
     }));
 
     app.post('/githook', function(req, res) {
-        xHubSig = req.headers['x-hub-signature'].substring(5);
-        hmac = crypto.createHmac('sha1', 'thisissosecret');
+        var xHubSig = req.headers['x-hub-signature'].substring(5);
+        var hmac = crypto.createHmac('sha1', process.env.GITHUB_SECRET || 'thisissosecret');
         hmac.write(req.body);
-        computedHubSig = hmac.digest('hex');
+        var computedHubSig = hmac.digest('hex');
         if (computedHubSig === xHubSig) {
             console.log('\n\nNew changes available:\n');
             async.series([
@@ -129,13 +129,16 @@ gulp.task('githook', function() {
                     exec('bower install', cb);
                 },
                 function(cb) {
-                    console.log('Packaging revised assets...');
-                    gulp.start('package');
+                    console.log('Deploying revised assets...');
+                    gulp.start('prod');
                     cb();
                 },
                 function(cb) {
-                    console.log('Restarting the web server...');
-                    exec('forever restartall', cb);
+                    console.log('Moving third-party back into their places');
+                    exec('cp ~/mentor.html ~/site/dist/pages/', cb);
+                },
+                function(cb) {
+                    exec('cp ~/register.html ~/site/dist/pages/', cb);
                 }
             ], function(err) {
                 if (err) {
@@ -152,7 +155,7 @@ gulp.task('githook', function() {
         }
     });
 
-    http.createServer(app).listen(4000, '0.0.0.0')
+    http.createServer(app).listen(4000, '0.0.0.0');
 });
 
 gulp.task('watch', ['server-dev'], function() {
