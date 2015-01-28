@@ -643,9 +643,37 @@ body {
             text-align: center;
 
             @media (max-width: @iphone6plus-width) {
-                padding: 40px 20px;
+                padding: 40px 20px 10px 20px;
             }
-
+            
+            #socialmedia {
+              padding: 15px 0px 0px 0px;
+              text-align: center;
+              font-size: 38px;
+              color: @blue;
+              vertical-align: top;
+              text-decoration: none;
+              transition: color 0.5s;
+              
+              #facebook {
+                margin-right: 15px; 
+                &:hover {
+                  text-decoration: none;
+                } 
+              }
+              
+              .fa {
+               &:hover {
+                  transition: 0.9s;
+                  transform: rotateY(360deg);
+                  transition-duration: 4s;
+                  color: lighten(@blue, 10%);
+                  text-decoration: none;
+                } 
+              }
+                
+            }
+          
             .btn {
                 display: block;
                 color: white;
@@ -687,6 +715,7 @@ body {
 
             .btn-mentor {
                 background-color: @blue;
+                margin-bottom: 0px;
 
                 &:hover {
                     background: lighten(@blue, 10%);
