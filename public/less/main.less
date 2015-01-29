@@ -138,6 +138,44 @@ body {
                     margin-left: 20px;
                     vertical-align: middle;
 
+                    .btn-mentor {
+                        background-color: #52A9B8;
+                        width: 254px;
+                        font-family: 'Roboto Slab', serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px; 
+                        margin-left: 5px;
+                        margin-top: 5px;
+                        padding: 8px 0px;
+                        color:#ffffff;
+                        transition: background-color 0.5s ease;
+
+                        &:hover {
+                            background-color: lighten(#51A5BA, 10%);
+                        }
+                    }
+
+                    .btn-register {
+                        background-color: #ab0332;
+                        width: 254px;
+                        font-family: 'Roboto Slab', serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-right:5px;
+                        margin-top: 5px;
+                        padding: 8px 0px;
+                        color: #ffffff;
+                        transition: background-color 0.5s ease;
+
+                        &:hover {
+                            background-color: lighten(#ab0332, 5%);
+                        }
+                    }
+
                     @media (max-width: 900px) {
                         // Breakpoint for landscape
                         display: block;
@@ -224,6 +262,7 @@ body {
                         }
                     }
                 }
+
             }
 
             .learn-more {
@@ -685,13 +724,6 @@ body {
                 }
             }
 
-            .btn-mentor {
-                background-color: @blue;
-
-                &:hover {
-                    background: lighten(@blue, 10%);
-                }
-            }
 
             #sponsor-list{
                 margin-bottom: 40px;
