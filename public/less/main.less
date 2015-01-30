@@ -92,20 +92,45 @@ body {
                     height: 530px;
                     margin-top: -265px;
                 }
+
+                @media (max-width: @iphone6plus-width) {
+                    height: 509px;
+                    margin-top: -255px;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    
+                }
+
+                @media (max-width: @iphone6-width) {
+                    padding-right: 30px;
+                    padding-left: 30px;
+                    height: 524px;
+                    margin-top: -262px;
+                }
+
                 @media (max-width: 575px) {
                     // The logo is "too damn big" breakpoint
                 }
-                @media (max-width: @iphone6plus-width) {
-                    height: 415px;
-                    margin-top: -208px;
-                }
+
                 @media (max-width: @iphone5-width) {
-                    height: 325px;
-                    margin-top: -172px;
+                    height: 455px;
+                    margin-top: -223px;
                 }
+
+                @media (max-width: @nexus5-width) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+
+                }
+                
                 @media (max-height: @iphone4-height) {
                     margin-top: -182px;
                 }
+
+                @media (max-height: @iphone4-width) {
+                    height: 455px;
+                }
+
 
                 &.concealed {
                     margin-top: -160px;
@@ -155,6 +180,19 @@ body {
                         &:hover {
                             background-color: lighten(#51A5BA, 10%);
                         }
+
+                        @media  (max-width: @iphone6plus-width) {
+                        //Breakpoint for buttons
+                            width:100%;
+                            font-size: 20px;
+                            margin-left: 0px;
+                            margin-top: 15px;
+                        }
+
+                        @media (max-width: @iphone5-width) {
+                            font-size: 18px;
+                        }  
+
                     }
 
                     .btn-register {
@@ -174,6 +212,18 @@ body {
                         &:hover {
                             background-color: lighten(#ab0332, 5%);
                         }
+
+                        @media  (max-width: @iphone6plus-width) {
+                        //Breakpoint for buttons
+                            width:100%;
+                            font-size: 20px;
+                            margin-top: 15px;
+                        }  
+
+
+                        @media (max-width: @iphone5-width) {
+                            font-size: 18px;
+                        } 
                     }
 
                     @media (max-width: 900px) {
@@ -282,6 +332,12 @@ body {
                 @media (max-width: @iphone5-width) {
                     margin-left: -92px;
                 }
+
+                @media (max-width: @iphone6plus-width) {
+                    margin-left: -92px;
+                    display:none;
+                }
+
                 @media (max-height: @iphone4-height) {
                     margin-left: -85px;
                 }

@@ -161,7 +161,7 @@ gulp.task('githook', function() {
 gulp.task('watch', ['server-dev'], function() {
     livereload.listen();
     gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
-    gulp.watch('public/less/*.less', ['less']).on('change', delay(livereload.changed, 500));
+    gulp.watch('public/less/*.less', ['less-dev']).on('change', delay(livereload.changed, 500));
     gulp.watch('public/pages/*.html', ['html-dev']).on('change', livereload.changed);
 });
 
