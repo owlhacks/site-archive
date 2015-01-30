@@ -125,12 +125,10 @@ body {
                 
                 @media (max-height: @iphone4-height) {
                     margin-top: -182px;
+                    height: 358px;
+                    padding-left: 25px;
+                    padding-right: 25px;   
                 }
-
-                @media (max-height: @iphone4-width) {
-                    height: 455px;
-                }
-
 
                 &.concealed {
                     margin-top: -160px;
@@ -152,16 +150,29 @@ body {
                         width: 250px;
                         height: 250px;
                     }
+                    
                     @media (max-width: @iphone5-width) {
                         width: 200px;
                         height: 200px;
                     }
+
+                    @media (max-height: @iphone4-height){
+                        height: 150px;
+                        width: 150px;
+                    }
+                    
+                   
+
                 }
 
                 .text {
                     display: inline-block;
                     margin-left: 20px;
                     vertical-align: middle;
+
+                    @media (max-height: @iphone4-height){
+                            margin-top:0px;
+                        } 
 
                     .btn-mentor {
                         background-color: #52A9B8;
@@ -191,7 +202,11 @@ body {
 
                         @media (max-width: @iphone5-width) {
                             font-size: 18px;
-                        }  
+                        }
+
+                        @media (max-height: @iphone4-height){
+                            margin-top:10px;
+                        }   
 
                     }
 
@@ -220,9 +235,12 @@ body {
                             margin-top: 15px;
                         }  
 
-
                         @media (max-width: @iphone5-width) {
                             font-size: 18px;
+                        }
+
+                        @media (max-height: @iphone4-height){
+                            margin-top:0px;
                         } 
                     }
 
