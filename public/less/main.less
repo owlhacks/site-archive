@@ -92,19 +92,42 @@ body {
                     height: 530px;
                     margin-top: -265px;
                 }
+
+                @media (max-width: @iphone6plus-width) {
+                    height: 509px;
+                    margin-top: -255px;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    
+                }
+
+                @media (max-width: @iphone6-width) {
+                    padding-right: 30px;
+                    padding-left: 30px;
+                    height: 524px;
+                    margin-top: -262px;
+                }
+
                 @media (max-width: 575px) {
                     // The logo is "too damn big" breakpoint
                 }
-                @media (max-width: @iphone6plus-width) {
-                    height: 415px;
-                    margin-top: -208px;
-                }
+
                 @media (max-width: @iphone5-width) {
-                    height: 325px;
-                    margin-top: -172px;
+                    height: 455px;
+                    margin-top: -223px;
                 }
+
+                @media (max-width: @nexus5-width) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+
+                }
+                
                 @media (max-height: @iphone4-height) {
                     margin-top: -182px;
+                    height: 358px;
+                    padding-left: 25px;
+                    padding-right: 25px;   
                 }
 
                 &.concealed {
@@ -127,16 +150,99 @@ body {
                         width: 250px;
                         height: 250px;
                     }
+                    
                     @media (max-width: @iphone5-width) {
                         width: 200px;
                         height: 200px;
                     }
+
+                    @media (max-height: @iphone4-height){
+                        height: 150px;
+                        width: 150px;
+                    }
+                    
+                   
+
                 }
 
                 .text {
                     display: inline-block;
                     margin-left: 20px;
                     vertical-align: middle;
+
+                    @media (max-height: @iphone4-height){
+                            margin-top:0px;
+                        } 
+
+                    .btn-mentor {
+                        background-color: #52A9B8;
+                        width: 254px;
+                        font-family: 'Roboto Slab', serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px; 
+                        margin-left: 5px;
+                        margin-top: 5px;
+                        padding: 8px 0px;
+                        color:#ffffff;
+                        transition: background-color 0.5s ease;
+
+                        &:hover {
+                            background-color: lighten(#51A5BA, 10%);
+                        }
+
+                        @media  (max-width: @iphone6plus-width) {
+                        //Breakpoint for buttons
+                            width:100%;
+                            font-size: 20px;
+                            margin-left: 0px;
+                            margin-top: 15px;
+                        }
+
+                        @media (max-width: @iphone5-width) {
+                            font-size: 18px;
+                        }
+
+                        @media (max-height: @iphone4-height){
+                            margin-top:10px;
+                        }   
+
+                    }
+
+                    .btn-register {
+                        background-color: #ab0332;
+                        width: 254px;
+                        font-family: 'Roboto Slab', serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        margin-right:5px;
+                        margin-top: 5px;
+                        padding: 8px 0px;
+                        color: #ffffff;
+                        transition: background-color 0.5s ease;
+
+                        &:hover {
+                            background-color: lighten(#ab0332, 5%);
+                        }
+
+                        @media  (max-width: @iphone6plus-width) {
+                        //Breakpoint for buttons
+                            width:100%;
+                            font-size: 20px;
+                            margin-top: 15px;
+                        }  
+
+                        @media (max-width: @iphone5-width) {
+                            font-size: 18px;
+                        }
+
+                        @media (max-height: @iphone4-height){
+                            margin-top:0px;
+                        } 
+                    }
 
                     @media (max-width: 900px) {
                         // Breakpoint for landscape
@@ -224,6 +330,7 @@ body {
                         }
                     }
                 }
+
             }
 
             .learn-more {
@@ -243,6 +350,12 @@ body {
                 @media (max-width: @iphone5-width) {
                     margin-left: -92px;
                 }
+
+                @media (max-width: @iphone6plus-width) {
+                    margin-left: -92px;
+                    display:none;
+                }
+
                 @media (max-height: @iphone4-height) {
                     margin-left: -85px;
                 }
@@ -713,27 +826,34 @@ body {
                 }
             }
 
-            .btn-mentor {
-                background-color: @blue;
-                margin-bottom: 0px;
-
-                &:hover {
-                    background: lighten(@blue, 10%);
-                }
-            }
-
             #sponsor-list{
-                margin-bottom: 40px;
                 text-align: center;
 
                 .sponsor-group {
                     display: inline-block;
+                    margin-bottom: 10px;
+                    margin-top: 10px;
 
                     .sponsor {
-                        margin-bottom: 0px;
                         text-align: center;
                         display: inline-block;
                         padding: 10px 20px;
+                    }
+
+                    .sponsor-3 {
+                        width: 267px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .sponsor-4 {
+                        width: 255px;
+
+                        img {
+                            width: 100%;
+                        }
                     }
 
                     .sponsor-5 {
