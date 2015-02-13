@@ -53,7 +53,7 @@ gulp.task('js-prod', function() {
     gulp.src(['public/js/main.js'])
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
-    gulp.src(['public/js/main.js'])
+    gulp.src(['public/js/conduct.js'])
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
