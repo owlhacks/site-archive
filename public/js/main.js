@@ -1,8 +1,8 @@
 // Main Module
 (function() {
-    var SECTION_HREF_REGEX = /\#\/(\w+)/;
-    var $body = $('html, body');
-
+  var SECTION_HREF_REGEX = /\#\/(\w+)/;
+  var $body = $('html, body');
+  
     function slideTo(scrollTop) {
         $body.animate({
             scrollTop: scrollTop,

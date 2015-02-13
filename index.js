@@ -19,6 +19,10 @@ app.get('/sponsor.pdf', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'dist', 'files', 'sponsor.pdf'));
 });
 
+app.get('/conduct', function(req, res) {
+    res.status(200).sendFile(path.join(__dirname, 'dist', 'pages', 'conduct.html'));
+});
+
 app.get('/*', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'dist', 'pages', '404.html'));
 });

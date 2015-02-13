@@ -42,16 +42,19 @@ gulp.task('less-prod', function() {
 
 gulp.task('js-dev', function() {
     // Builds the JS
-    gulp.src(['public/js/*.js'])
-        .pipe(concat('main.js'))
+    gulp.src(['public/js/main.js'])
+        .pipe(gulp.dest('dist'));
+    gulp.src(['public/js/conduct.js'])
         .pipe(gulp.dest('dist'));
 });
 
 gulp.task('js-prod', function() {
     // Builds the JS
-    gulp.src(['public/js/*.js'])
+    gulp.src(['public/js/main.js'])
         .pipe(uglify())
-        .pipe(concat('main.js'))
+        .pipe(gulp.dest('dist'));
+    gulp.src(['public/js/main.js'])
+        .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
 
@@ -160,7 +163,7 @@ gulp.task('githook', function() {
 
 gulp.task('watch', ['server-dev'], function() {
     livereload.listen();
-    gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
+    gulp.watch('public/js/*.js', ['js-dev']).on('change', livereload.changed);
     gulp.watch('public/less/*.less', ['less-dev']).on('change', delay(livereload.changed, 500));
     gulp.watch('public/pages/*.html', ['html-dev']).on('change', livereload.changed);
 });
